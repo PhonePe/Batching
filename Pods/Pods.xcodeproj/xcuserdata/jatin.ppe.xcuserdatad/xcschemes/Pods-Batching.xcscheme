@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1077623D1E24E4F1008D534D"
-               BuildableName = "Batching.framework"
-               BlueprintName = "Batching"
-               ReferencedContainer = "container:Batching.xcodeproj">
+               BlueprintIdentifier = "2436DC9950430D87EA9AE5ADC5E34F61"
+               BuildableName = "Pods_Batching.framework"
+               BlueprintName = "Pods-Batching"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1077623D1E24E4F1008D534D"
-            BuildableName = "Batching.framework"
-            BlueprintName = "Batching"
-            ReferencedContainer = "container:Batching.xcodeproj">
+            BlueprintIdentifier = "2436DC9950430D87EA9AE5ADC5E34F61"
+            BuildableName = "Pods_Batching.framework"
+            BlueprintName = "Pods-Batching"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1077623D1E24E4F1008D534D"
-            BuildableName = "Batching.framework"
-            BlueprintName = "Batching"
-            ReferencedContainer = "container:Batching.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

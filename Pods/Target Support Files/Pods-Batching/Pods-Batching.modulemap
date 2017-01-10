@@ -1,0 +1,6 @@
+framework module Pods_Batching {
+  umbrella header "Pods-Batching-umbrella.h"
+
+  export *
+  module * { export * }
+}
