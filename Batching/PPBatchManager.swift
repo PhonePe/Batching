@@ -13,18 +13,18 @@ class PPBatchManager {
     
     typealias NetworkCallCompletion = (Data?, URLResponse?, Error?, [String]) -> Void
     
-    private let sizeStrategy: PPSizeBatchingStrategy
-    private let timeStrategy: PPTimeBatchingStrategy
-    private let ingestionURL: URL
-    private var httpHeaders: [String: String]
-    private let batchingQueue = DispatchQueue(label: "batching.library.queue")
-    private var isUploadingEvents = false
-    private let database: YapDatabase
+    fileprivate let sizeStrategy: PPSizeBatchingStrategy
+    fileprivate let timeStrategy: PPTimeBatchingStrategy
+    fileprivate let ingestionURL: URL
+    fileprivate var httpHeaders: [String: String]
+    fileprivate let batchingQueue = DispatchQueue(label: "batching.library.queue")
+    fileprivate var isUploadingEvents = false
+    fileprivate let database: YapDatabase
     
     
     var debugEnabled = false
     
-    private var databasePath: String = {
+    fileprivate var databasePath: String = {
     
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let eventsPath = (documentsPath as NSString).appendingPathComponent("Event Batching")
@@ -44,7 +44,7 @@ class PPBatchManager {
     }
     
     
-    func addToBatch(event: BatchSerializable) {
+    func addToBatch(_ event: BatchSerializable) {
         
         batchingQueue.async {
 
@@ -60,7 +60,7 @@ class PPBatchManager {
                 
             }, completionQueue: self.batchingQueue, completionBlock: { 
                 
-                self.flush(forced: false)
+                self.flush(false)
                 
             })
             
@@ -68,18 +68,18 @@ class PPBatchManager {
         
     }
     
-    func flush(forced: Bool) {
+    func flush(_ forced: Bool) {
         
         batchingQueue.async {
         
             //Check if the flushing is forced, events > 0
             if forced {
-                self.ingestBatch(completion: self.handleBatchingResponse)
+                self.ingestBatch(self.handleBatchingResponse)
             } else {
                 
                 //Check for strategy based conditions here and then ingest
                 
-                self.ingestBatch(completion: self.handleBatchingResponse)
+                self.ingestBatch(self.handleBatchingResponse)
                 
             }
         
@@ -95,7 +95,7 @@ class PPBatchManager {
         
     }
     
-    private func ingestBatch(completion: @escaping NetworkCallCompletion) {
+    fileprivate func ingestBatch(_ completion: @escaping NetworkCallCompletion) {
         
         
         self.isUploadingEvents = true
@@ -114,13 +114,13 @@ class PPBatchManager {
                 allKeys.append(key)
             })
             
-            self.sendBatchWith(objects: allObjects, forKeys: allKeys, completion: completion)
+            self.sendBatchWith(allObjects, forKeys: allKeys, completion: completion)
         })
             
         
     }
     
-    private func sendBatchWith(objects: [Any], forKeys keys: [String], completion: @escaping NetworkCallCompletion) {
+    fileprivate func sendBatchWith(_ objects: [Any], forKeys keys: [String], completion: @escaping NetworkCallCompletion) {
         
         self.batchingQueue.async {
             
@@ -150,7 +150,7 @@ class PPBatchManager {
         
     }
     
-    private func handleBatchingResponse(data: Data?, response: URLResponse?, error: Error?, keys: [String]) {
+    fileprivate func handleBatchingResponse(_ data: Data?, response: URLResponse?, error: Error?, keys: [String]) {
         
         batchingQueue.async {
         
@@ -197,7 +197,7 @@ class PPBatchManager {
         
     }
     
-    private func removeEventsWithIds(_ ids: [String], completion: @escaping (Void) -> Void) {
+    fileprivate func removeEventsWithIds(_ ids: [String], completion: @escaping (Void) -> Void) {
         
         batchingQueue.async {
         
@@ -222,7 +222,7 @@ class PPBatchManager {
         
     }
     
-    private func newDBConnection() -> YapDatabaseConnection {
+    fileprivate func newDBConnection() -> YapDatabaseConnection {
         return self.database.newConnection()
     }
 }
