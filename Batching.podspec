@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.version      = "0.0.1"
   s.summary      = "A batching library for the analytics events."
 
-  s.homepage     = "https://gitlab.phonepe.com/u/jatin"
+  s.homepage     = "https://github.com/arorajatin"
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://gitlab.phonepe.com/jatin/Batching", :tag => "#{s.version}" }
 
 
-  s.source_files  = "Classes", "Classes/**/*.{swift}"
+  s.source_files  = "Batching", "Batching/**/*.{swift}"
 
   s.frameworks = "UIKit", "Foundation"
 
