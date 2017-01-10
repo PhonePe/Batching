@@ -60,13 +60,13 @@ PODS:
     - YapDatabase/Standard/Core
 
 DEPENDENCIES:
-  - YapDatabase (~> 2.9)
+  - YapDatabase
 
 SPEC CHECKSUMS:
   CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   YapDatabase: b1e43555a34a5298e23a045be96817a5ef0da58f
 
-PODFILE CHECKSUM: 132f014ebaa1a6433a521a22e10227bb9931ce20
+PODFILE CHECKSUM: 75757110fd243549a9abb647abeeece86e93fe12
 
 COCOAPODS: 1.1.1
