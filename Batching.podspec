@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "Batching"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "A batching library for the analytics events."
 
   s.homepage     = "https://github.com/arorajatin"
