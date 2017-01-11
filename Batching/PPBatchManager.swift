@@ -85,21 +85,37 @@ public class PPBatchManager {
         
         batchingQueue.async {
         
-            //TODO: Check if the flushing is forced, events > 0
-            if forced {
+            let connection = self.database.newConnection()
+            var count = 0
+            
+            connection.read({ (transaction) in
+                count = transaction.allKeys(inCollection: nil).count
+            })
+
+            //Check the strategies and count of events here
+            
+            if (forced || self.isBatchReady(eventCount: Int64(count))) && count > 0 {
                 self.ingestBatch(self.handleBatchingResponse)
-            } else {
-                
-                //TODO: Check for strategy based conditions here and then ingest
-                
-                self.ingestBatch(self.handleBatchingResponse)
-                
             }
         
         }
         
     }
     
+    fileprivate func isBatchReady(eventCount: Int64) -> Bool {
+    
+        if eventCount >= self.sizeStrategy.eventsBeforeIngestion {
+            return true
+        }
+        
+        let lastSuccessfulIngestionTime = UserDefaults.standard.double(forKey: PPBatchUserDefaults.lastSuccessfulIngestionTime)
+        
+        if NSDate().timeIntervalSince1970 - lastSuccessfulIngestionTime >= self.timeStrategy.timeBeforeIngestion {
+            return true
+        }
+        
+        return false
+    }
     
     fileprivate func ingestBatch(_ completion: @escaping EventIngestionCompletion) {
         
@@ -131,8 +147,12 @@ public class PPBatchManager {
         self.batchingQueue.async {
             
             self.delegate?.batchManagerShouldIngestBatch(self, batch: objects, completion: { (success, error) in
-                self.isUploadingEvents = false
-                completion(success, error, keys)
+                
+                self.batchingQueue.async {
+                    self.isUploadingEvents = false
+                    completion(success, error, keys)
+                }
+                
             })
             
         }
@@ -148,6 +168,9 @@ public class PPBatchManager {
             
             
             if error == nil && success {
+                
+                UserDefaults.standard.set(NSDate().timeIntervalSince1970, forKey: PPBatchUserDefaults.lastSuccessfulIngestionTime)
+                UserDefaults.standard.synchronize()
                 
                 self.removeEventsWithIds(keys, completion: {
                     

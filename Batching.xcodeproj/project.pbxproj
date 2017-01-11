@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104DE7F21E26D0F5003B223F /* PPBatchConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104DE7F11E26D0F5003B223F /* PPBatchConstants.swift */; };
 		107762431E24E4F1008D534D /* Batching.h in Headers */ = {isa = PBXBuildFile; fileRef = 107762411E24E4F1008D534D /* Batching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1077624C1E24E7D6008D534D /* PPBatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107762491E24E7D6008D534D /* PPBatchManager.swift */; };
 		1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104DE7F11E26D0F5003B223F /* PPBatchConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchConstants.swift; sourceTree = "<group>"; };
 		1077623E1E24E4F1008D534D /* Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		107762411E24E4F1008D534D /* Batching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Batching.h; sourceTree = "<group>"; };
 		107762421E24E4F1008D534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				1077624B1E24E7D6008D534D /* PPBatchProtocols.swift */,
 				107762411E24E4F1008D534D /* Batching.h */,
 				107762421E24E4F1008D534D /* Info.plist */,
+				104DE7F11E26D0F5003B223F /* PPBatchConstants.swift */,
 			);
 			path = Batching;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				104DE7F21E26D0F5003B223F /* PPBatchConstants.swift in Sources */,
 				1077624C1E24E7D6008D534D /* PPBatchManager.swift in Sources */,
 				1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */,
 				1077624E1E24E7D6008D534D /* PPBatchProtocols.swift in Sources */,

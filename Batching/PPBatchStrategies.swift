@@ -16,6 +16,6 @@ public struct PPSizeBatchingStrategy {
 
 
 public struct PPTimeBatchingStrategy {
-    public var timeBeforeIngestion: Int64 = 10
+    public var timeBeforeIngestion: Double = 10
     public init() {}
 }
