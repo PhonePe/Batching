@@ -9,8 +9,8 @@
 import Foundation
 import YapDatabase
 
-typealias NetworkCallCompletion = (Data?, URLResponse?, Error?) -> Void
-typealias EventIngestionCompletion = (Data?, URLResponse?, Error?, [String]) -> Void
+typealias NetworkCallCompletion = (Bool, Error?) -> Void
+typealias EventIngestionCompletion = (Bool, Error?, [String]) -> Void
 
 public protocol PPBatchManagerDelegate: class {
     func batchManagerShouldIngestBatch(_ manager: PPBatchManager, batch: [Any], completion: NetworkCallCompletion)
@@ -120,51 +120,46 @@ public class PPBatchManager {
         
         self.batchingQueue.async {
             
-            self.delegate?.batchManagerShouldIngestBatch(self, batch: objects, completion: { (data, response, error) in
+            self.delegate?.batchManagerShouldIngestBatch(self, batch: objects, completion: { (success, error) in
                 self.isUploadingEvents = false
-                completion(data, response, error, keys)
+                completion(success, error, keys)
             })
             
         }
         
     }
     
-    fileprivate func handleBatchingResponse(_ data: Data?, response: URLResponse?, error: Error?, keys: [String]) {
+    fileprivate func handleBatchingResponse(success: Bool, error: Error?, keys: [String]) {
         
         batchingQueue.async {
         
             //Handle response 
             //If the response is success then delete the corresponding events from YapDB
             
-            if let response = response as? HTTPURLResponse {
+            
+            if error == nil && success {
                 
-                if response.statusCode == 200 {
-                    
-                    self.removeEventsWithIds(keys, completion: {
-                        
-                        self.isUploadingEvents = false
-                        
-                    })
-                    
-                    //Remove all objects for corresponding keys from YapDB
-                    
-                    let connection = self.newDBConnection()
-                    
-                    connection.asyncReadWrite({ (transaction) in
-                        
-                        for key in keys {
-                            transaction.removeObject(forKey: key, inCollection: nil)
-                        }
-                        
-                    }, completionQueue: self.batchingQueue, completionBlock: {
-                        self.isUploadingEvents = false
-                    })
-                    
-                } else {
+                self.removeEventsWithIds(keys, completion: {
                     
                     self.isUploadingEvents = false
                     
-                }
+                })
+                
+                //Remove all objects for corresponding keys from YapDB
+                
+                let connection = self.newDBConnection()
+                
+                connection.asyncReadWrite({ (transaction) in
+                    
+                    for key in keys {
+                        transaction.removeObject(forKey: key, inCollection: nil)
+                    }
+                    
+                }, completionQueue: self.batchingQueue, completionBlock: {
+                    self.isUploadingEvents = false
+                })
+                
+                
                 
             } else {
                 
