@@ -9,42 +9,45 @@
 import Foundation
 import YapDatabase
 
+typealias NetworkCallCompletion = (Data?, URLResponse?, Error?) -> Void
+typealias EventIngestionCompletion = (Data?, URLResponse?, Error?, [String]) -> Void
+
+public protocol PPBatchManagerDelegate: class {
+    func batchManagerShouldIngestBatch(_ manager: PPBatchManager, batch: [Any], completion: NetworkCallCompletion)
+}
+
 public class PPBatchManager {
-    
-    typealias NetworkCallCompletion = (Data?, URLResponse?, Error?, [String]) -> Void
     
     fileprivate let sizeStrategy: PPSizeBatchingStrategy
     fileprivate let timeStrategy: PPTimeBatchingStrategy
-    fileprivate let ingestionURL: URL
-    fileprivate var httpHeaders: [String: String]
     fileprivate let batchingQueue = DispatchQueue(label: "batching.library.queue")
     fileprivate var isUploadingEvents = false
     fileprivate let database: YapDatabase
     
+    public weak var delegate: PPBatchManagerDelegate?
     
-    var debugEnabled = false
+    public var debugEnabled = false
     
     fileprivate var databasePath: String = {
     
+        //TODO: Create a directory named analytics, whole path = Documents/Analaytics/EventsDB.sqlite
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let eventsPath = (documentsPath as NSString).appendingPathComponent("Event Batching")
-        let finalPath = (eventsPath as NSString).appendingPathComponent("EventsDB.sqlite")
+        let eventsPath = (documentsPath as NSString).appendingPathComponent("")
+        let finalPath = (documentsPath as NSString).appendingPathComponent("EventsDB.sqlite")
         
         return finalPath
         
     }()
     
     
-    public init(sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy, ingestionURL: URL, httpHeaders: [String: String]) {
+    public init(sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy) {
         self.sizeStrategy = sizeStrategy
         self.timeStrategy = timeStrategy
-        self.ingestionURL = ingestionURL
-        self.httpHeaders = httpHeaders
-        self.database = YapDatabase(path: databasePath)
+        self.database = YapDatabase(path: databasePath, options: nil)
     }
     
     
-    public func addToBatch(_ event: BatchSerializable) {
+    public func addToBatch(_ event: NSObject) {
         
         batchingQueue.async {
 
@@ -56,7 +59,7 @@ public class PPBatchManager {
             
             connection.asyncReadWrite({ (transaction) in
                 
-                transaction.setObject(event.dictionaryRepresentation(), forKey: eventID, inCollection: nil)
+                transaction.setObject(event, forKey: eventID, inCollection: nil)
                 
             }, completionQueue: self.batchingQueue, completionBlock: { 
                 
@@ -72,12 +75,12 @@ public class PPBatchManager {
         
         batchingQueue.async {
         
-            //Check if the flushing is forced, events > 0
+            //TODO: Check if the flushing is forced, events > 0
             if forced {
                 self.ingestBatch(self.handleBatchingResponse)
             } else {
                 
-                //Check for strategy based conditions here and then ingest
+                //TODO: Check for strategy based conditions here and then ingest
                 
                 self.ingestBatch(self.handleBatchingResponse)
                 
@@ -87,15 +90,8 @@ public class PPBatchManager {
         
     }
     
-    public func changeHTTPHeadersTo(_ newParams: [String: String]) {
-        
-        batchingQueue.async {
-            self.httpHeaders = newParams
-        }
-        
-    }
     
-    fileprivate func ingestBatch(_ completion: @escaping NetworkCallCompletion) {
+    fileprivate func ingestBatch(_ completion: @escaping EventIngestionCompletion) {
         
         
         self.isUploadingEvents = true
@@ -120,31 +116,14 @@ public class PPBatchManager {
         
     }
     
-    fileprivate func sendBatchWith(_ objects: [Any], forKeys keys: [String], completion: @escaping NetworkCallCompletion) {
+    fileprivate func sendBatchWith(_ objects: [Any], forKeys keys: [String], completion: @escaping EventIngestionCompletion) {
         
         self.batchingQueue.async {
             
-            //2. Upload the events
-            
-            let session = URLSession.shared
-            var request = URLRequest(url: self.ingestionURL)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            //Change this to actual body based on the batch of events
-            do {
-                
-                request.httpBody = try JSONSerialization.data(withJSONObject: objects, options: .prettyPrinted)
-                request.allHTTPHeaderFields = self.httpHeaders
-                
-                let _ = session.dataTask(with: request) { (data, response, error) in
-                    completion(data, response, error, keys)
-                }
-                
-            } catch {
-                assert(false, "Failed to serialise data from the yapDB")
+            self.delegate?.batchManagerShouldIngestBatch(self, batch: objects, completion: { (data, response, error) in
                 self.isUploadingEvents = false
-            }
+                completion(data, response, error, keys)
+            })
             
         }
         

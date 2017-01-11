@@ -10,10 +10,12 @@ import Foundation
 
 
 public struct PPSizeBatchingStrategy {
-    let numberOfEventsBeforeIngestion: Int64
+    public var eventsBeforeIngestion: Int64 = 10
+    public init() {}
 }
 
 
 public struct PPTimeBatchingStrategy {
-    let timeBeforeIngestion: Int64
+    public var timeBeforeIngestion: Int64 = 10
+    public init() {}
 }
