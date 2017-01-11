@@ -54,6 +54,9 @@ public class PPBatchManager {
         self.sizeStrategy = sizeStrategy
         self.timeStrategy = timeStrategy
         self.database = YapDatabase(path: databasePath, options: nil)
+        
+        //Flush when the class is initialised, this is to make sure that if app gets killed during flushing we retry immediately after launch
+        self.flush(false)
     }
     
     
