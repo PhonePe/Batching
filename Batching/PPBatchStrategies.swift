@@ -9,11 +9,11 @@
 import Foundation
 
 
-struct PPSizeBatchingStrategy {
+public struct PPSizeBatchingStrategy {
     let numberOfEventsBeforeIngestion: Int64
 }
 
 
-struct PPTimeBatchingStrategy {
+public struct PPTimeBatchingStrategy {
     let timeBeforeIngestion: Int64
 }

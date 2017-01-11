@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol BatchSerializable {
+public protocol BatchSerializable {
     
     func isValidJSON() -> Bool
     func jsonRepresentation() -> Data?

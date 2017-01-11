@@ -35,7 +35,7 @@ class PPBatchManager {
     }()
     
     
-    init(sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy, ingestionURL: URL, httpHeaders: [String: String]) {
+    public init(sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy, ingestionURL: URL, httpHeaders: [String: String]) {
         self.sizeStrategy = sizeStrategy
         self.timeStrategy = timeStrategy
         self.ingestionURL = ingestionURL
@@ -44,7 +44,7 @@ class PPBatchManager {
     }
     
     
-    func addToBatch(_ event: BatchSerializable) {
+    public func addToBatch(_ event: BatchSerializable) {
         
         batchingQueue.async {
 
@@ -68,7 +68,7 @@ class PPBatchManager {
         
     }
     
-    func flush(_ forced: Bool) {
+    public func flush(_ forced: Bool) {
         
         batchingQueue.async {
         
@@ -87,7 +87,7 @@ class PPBatchManager {
         
     }
     
-    func changeHTTPHeadersTo(_ newParams: [String: String]) {
+    public func changeHTTPHeadersTo(_ newParams: [String: String]) {
         
         batchingQueue.async {
             self.httpHeaders = newParams
