@@ -86,10 +86,10 @@ public class PPBatchManager {
         batchingQueue.async {
         
             let connection = self.database.newConnection()
-            var count = 0
+            var count: UInt = 0
             
             connection.read({ (transaction) in
-                count = transaction.allKeys(inCollection: nil).count
+                count = transaction.numberOfKeysInAllCollections()
             })
 
             //Check the strategies and count of events here
