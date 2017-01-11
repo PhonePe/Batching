@@ -9,11 +9,10 @@
 import Foundation
 import YapDatabase
 
-typealias NetworkCallCompletion = (Bool, Error?) -> Void
 typealias EventIngestionCompletion = (Bool, Error?, [String]) -> Void
 
 public protocol PPBatchManagerDelegate: class {
-    func batchManagerShouldIngestBatch(_ manager: PPBatchManager, batch: [Any], completion: NetworkCallCompletion)
+    func batchManagerShouldIngestBatch(_ manager: PPBatchManager, batch: [Any], completion: @escaping (Bool, Error?) -> Void)
 }
 
 public class PPBatchManager {
