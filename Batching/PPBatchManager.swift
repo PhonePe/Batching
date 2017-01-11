@@ -29,9 +29,20 @@ public class PPBatchManager {
     
     fileprivate var databasePath: String = {
     
-        //TODO: Create a directory named analytics, whole path = Documents/Analaytics/EventsDB.sqlite
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let eventsPath = (documentsPath as NSString).appendingPathComponent("")
+        let eventsPath = (documentsPath as NSString).appendingPathComponent("Event Batching")
+        
+        if FileManager.default.fileExists(atPath: eventsPath) == false {
+        
+            do {
+                try FileManager.default.createDirectory(atPath: eventsPath, withIntermediateDirectories: false, attributes: nil)
+            } catch {
+                assert(false, "Unable to create DB directory for Batching Pod")
+            }
+            
+        }
+        
+        
         let finalPath = (documentsPath as NSString).appendingPathComponent("EventsDB.sqlite")
         
         return finalPath
