@@ -9,7 +9,7 @@
 import Foundation
 import YapDatabase
 
-class PPBatchManager {
+public class PPBatchManager {
     
     typealias NetworkCallCompletion = (Data?, URLResponse?, Error?, [String]) -> Void
     
