@@ -122,6 +122,10 @@ public class PPBatchManager {
     
     fileprivate func ingestBatch(_ completion: @escaping EventIngestionCompletion) {
         
+        //We should upload next set of events, once the current batch has finished processing
+        if self.isUploadingEvents {
+            return
+        }
         
         self.isUploadingEvents = true
         
