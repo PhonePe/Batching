@@ -22,10 +22,12 @@ public class PPBatchManager {
     fileprivate let batchingQueue = DispatchQueue(label: "batching.library.queue")
     fileprivate var isUploadingEvents = false
     fileprivate let database: YapDatabase
+    fileprivate var timer: Timer? = nil
     
     public weak var delegate: PPBatchManagerDelegate?
     
     public var debugEnabled = false
+    
     
     fileprivate var databasePath: String = {
     
@@ -55,8 +57,10 @@ public class PPBatchManager {
         self.timeStrategy = timeStrategy
         self.database = YapDatabase(path: databasePath, options: nil)
         
+        scheduleTimer()
+        
         //Flush when the class is initialised, this is to make sure that if app gets killed during flushing we retry immediately after launch
-        self.flush(false)
+        flush(false)
     }
     
     
@@ -108,12 +112,6 @@ public class PPBatchManager {
     fileprivate func isBatchReady(eventCount: Int64) -> Bool {
     
         if eventCount >= self.sizeStrategy.eventsBeforeIngestion {
-            return true
-        }
-        
-        let lastSuccessfulIngestionTime = UserDefaults.standard.double(forKey: PPBatchUserDefaults.lastSuccessfulIngestionTime)
-        
-        if NSDate().timeIntervalSince1970 - lastSuccessfulIngestionTime >= self.timeStrategy.timeBeforeIngestion {
             return true
         }
         
@@ -238,5 +236,18 @@ public class PPBatchManager {
     
     fileprivate func newDBConnection() -> YapDatabaseConnection {
         return self.database.newConnection()
+    }
+    
+    fileprivate func scheduleTimer() {
+        timer = Timer.scheduledTimer(timeInterval: self.timeStrategy.timeBeforeIngestion, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        
+        if let timer = timer {
+            RunLoop.main.add(timer, forMode: .commonModes)
+        }
+        
+    }
+    
+    @objc func timerFired() {
+        self.flush(false)
     }
 }
