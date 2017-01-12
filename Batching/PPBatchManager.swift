@@ -173,10 +173,7 @@ public class PPBatchManager {
             
             
             if error == nil && success {
-                
-                UserDefaults.standard.set(NSDate().timeIntervalSince1970, forKey: PPBatchUserDefaults.lastSuccessfulIngestionTime)
-                UserDefaults.standard.synchronize()
-                
+                                
                 self.removeEventsWithIds(keys, completion: {
                     
                     self.isUploadingEvents = false
