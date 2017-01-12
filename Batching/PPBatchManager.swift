@@ -261,7 +261,8 @@ public class PPBatchManager {
         }
         
         @objc func timerFired() {
-            batchManager?.flush(false)
+            //Force push the events once timer is fired
+            batchManager?.flush(true)
         }
         
     }
