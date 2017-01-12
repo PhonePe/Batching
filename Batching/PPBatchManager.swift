@@ -63,6 +63,9 @@ public class PPBatchManager {
         flush(false)
     }
     
+    deinit {
+        timer?.invalidate()
+    }
     
     public func addToBatch(_ event: NSObject) {
         
@@ -236,7 +239,11 @@ public class PPBatchManager {
     }
     
     fileprivate func scheduleTimer() {
-        timer = Timer.scheduledTimer(timeInterval: self.timeStrategy.timeBeforeIngestion, target: self, selector: #selector(timerFired), userInfo: nil, repeats: true)
+        
+        guard timer == nil else { return }
+        
+        let weakSelf = PPBatchManagerWrapper(batchManager: self)
+        timer = Timer.scheduledTimer(timeInterval: self.timeStrategy.timeBeforeIngestion, target: weakSelf, selector: #selector(PPBatchManagerWrapper.timerFired), userInfo: nil, repeats: true)
         
         if let timer = timer {
             RunLoop.main.add(timer, forMode: .commonModes)
@@ -244,7 +251,18 @@ public class PPBatchManager {
         
     }
     
-    @objc func timerFired() {
-        self.flush(false)
+    //This is a wrapper to make sure self is deinitialised properly
+    final private class PPBatchManagerWrapper {
+        
+        weak var batchManager: PPBatchManager?
+        
+        init(batchManager: PPBatchManager) {
+            self.batchManager = batchManager
+        }
+        
+        @objc func timerFired() {
+            batchManager?.flush(false)
+        }
+        
     }
 }
