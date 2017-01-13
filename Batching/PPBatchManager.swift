@@ -77,15 +77,11 @@ public class PPBatchManager {
             let eventID = UUID().uuidString
             let connection = self.newDBConnection()
             
-            connection.asyncReadWrite({ (transaction) in
-                
+            connection.readWrite({ (transaction) in
                 transaction.setObject(event, forKey: eventID, inCollection: nil)
-                
-            }, completionQueue: self.batchingQueue, completionBlock: { 
-                
-                self.flush(false)
-                
             })
+                
+            self.flush(false)
             
         }
         
@@ -197,17 +193,15 @@ public class PPBatchManager {
             
             let connection = self.newDBConnection()
             
-            connection.asyncReadWrite({ (transaction) in
+            connection.readWrite({ (transaction) in
                 
                 for key in ids {
                     transaction.removeObject(forKey: key, inCollection: nil)
                 }
                 
-            }, completionQueue: self.batchingQueue, completionBlock: {
-                
-                completion()
-                
             })
+            
+            completion()
             
         }
         
@@ -221,6 +215,8 @@ public class PPBatchManager {
     fileprivate func scheduleTimer() {
         
         guard timer == nil else { return }
+        
+        //Weakly wrapping self to avoid unnecessarily retaining self by Timer
         
         let weakSelf = PPBatchManagerWrapper(batchManager: self)
         timer = Timer.scheduledTimer(timeInterval: self.timeStrategy.timeBeforeIngestion, target: weakSelf, selector: #selector(PPBatchManagerWrapper.timerFired), userInfo: nil, repeats: true)
