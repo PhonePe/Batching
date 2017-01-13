@@ -75,7 +75,7 @@ public class PPBatchManager {
             //2. Store in the YapDB
             
             let eventID = UUID().uuidString
-            let connection = self.database.newConnection()
+            let connection = self.newDBConnection()
             
             connection.asyncReadWrite({ (transaction) in
                 
@@ -95,7 +95,7 @@ public class PPBatchManager {
         
         batchingQueue.async {
         
-            let connection = self.database.newConnection()
+            let connection = self.newDBConnection()
             var count: UInt = 0
             
             connection.read({ (transaction) in
