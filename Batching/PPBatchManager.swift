@@ -157,7 +157,6 @@ public class PPBatchManager {
             self.delegate?.batchManagerShouldIngestBatch(self, batch: objects, completion: { (success, error) in
                 
                 self.batchingQueue.async {
-                    self.isUploadingEvents = false
                     completion(success, error, keys)
                 }
                 
@@ -174,30 +173,11 @@ public class PPBatchManager {
             //Handle response 
             //If the response is success then delete the corresponding events from YapDB
             
-            
             if error == nil && success {
                                 
                 self.removeEventsWithIds(keys, completion: {
-                    
-                    self.isUploadingEvents = false
-                    
-                })
-                
-                //Remove all objects for corresponding keys from YapDB
-                
-                let connection = self.newDBConnection()
-                
-                connection.asyncReadWrite({ (transaction) in
-                    
-                    for key in keys {
-                        transaction.removeObject(forKey: key, inCollection: nil)
-                    }
-                    
-                }, completionQueue: self.batchingQueue, completionBlock: {
                     self.isUploadingEvents = false
                 })
-                
-                
                 
             } else {
                 
