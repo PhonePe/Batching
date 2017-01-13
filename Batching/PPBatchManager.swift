@@ -45,7 +45,7 @@ public class PPBatchManager {
         }
         
         
-        let finalPath = (documentsPath as NSString).appendingPathComponent("EventsDB.sqlite")
+        let finalPath = (eventsPath as NSString).appendingPathComponent("EventsDB.sqlite")
         
         return finalPath
         
