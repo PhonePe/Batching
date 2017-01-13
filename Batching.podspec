@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
 
   s.name         = "Batching"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "A batching library for the analytics events."
 
   s.homepage     = "https://github.com/arorajatin"
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://gitlab.phonepe.com/jatin/Batching", :tag => "#{s.version}" }
+  s.source       = { :git => "https://gitlab.phonepe.com/iOS/Batching.git", :tag => "#{s.version}" }
 
 
   s.source_files  = "Batching", "Batching/**/*.{swift}"
