@@ -10,7 +10,6 @@
 		107762431E24E4F1008D534D /* Batching.h in Headers */ = {isa = PBXBuildFile; fileRef = 107762411E24E4F1008D534D /* Batching.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1077624C1E24E7D6008D534D /* PPBatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107762491E24E7D6008D534D /* PPBatchManager.swift */; };
 		1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */; };
-		1077624E1E24E7D6008D534D /* PPBatchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077624B1E24E7D6008D534D /* PPBatchProtocols.swift */; };
 		7313B8C8D665603FFA4C2878 /* Pods_Batching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967F3DAAED55CC988AE3617C /* Pods_Batching.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,7 +19,6 @@
 		107762421E24E4F1008D534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		107762491E24E7D6008D534D /* PPBatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchManager.swift; sourceTree = "<group>"; };
 		1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchStrategies.swift; sourceTree = "<group>"; };
-		1077624B1E24E7D6008D534D /* PPBatchProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchProtocols.swift; sourceTree = "<group>"; };
 		2147E156D6C34F3D296B496D /* Pods-Batching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Batching.release.xcconfig"; path = "Pods/Target Support Files/Pods-Batching/Pods-Batching.release.xcconfig"; sourceTree = "<group>"; };
 		2638BC246F98F5B2BE7F8724 /* Pods-Batching.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Batching.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Batching/Pods-Batching.debug.xcconfig"; sourceTree = "<group>"; };
 		967F3DAAED55CC988AE3617C /* Pods_Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,7 +59,6 @@
 			children = (
 				107762491E24E7D6008D534D /* PPBatchManager.swift */,
 				1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */,
-				1077624B1E24E7D6008D534D /* PPBatchProtocols.swift */,
 				107762411E24E4F1008D534D /* Batching.h */,
 				107762421E24E4F1008D534D /* Info.plist */,
 			);
@@ -203,7 +200,6 @@
 			files = (
 				1077624C1E24E7D6008D534D /* PPBatchManager.swift in Sources */,
 				1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */,
-				1077624E1E24E7D6008D534D /* PPBatchProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
