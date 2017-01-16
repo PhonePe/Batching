@@ -11,20 +11,20 @@
 		1077624C1E24E7D6008D534D /* PPBatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107762491E24E7D6008D534D /* PPBatchManager.swift */; };
 		1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */; };
 		108B83D51E28E07C00101E76 /* PPBatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B83D41E28E07C00101E76 /* PPBatchUtils.swift */; };
-		10CFEFA91E2CB75B009AFBCB /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10CFEFA71E2CB75B009AFBCB /* DataModel.xcdatamodeld */; };
-		10CFEFAB1E2CB7CB009AFBCB /* DataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFEFAA1E2CB7CB009AFBCB /* DataStoreController.swift */; };
+		10CFEFB11E2CB889009AFBCB /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10CFEFAE1E2CB889009AFBCB /* DataModel.xcdatamodeld */; };
+		10CFEFB21E2CB889009AFBCB /* DataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CFEFB01E2CB889009AFBCB /* DataStoreController.swift */; };
 		7313B8C8D665603FFA4C2878 /* Pods_Batching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967F3DAAED55CC988AE3617C /* Pods_Batching.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1077623E1E24E4F1008D534D /* Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		107762411E24E4F1008D534D /* Batching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Batching.h; sourceTree = "<group>"; };
-		107762421E24E4F1008D534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		107762491E24E7D6008D534D /* PPBatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchManager.swift; sourceTree = "<group>"; };
-		1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchStrategies.swift; sourceTree = "<group>"; };
-		108B83D41E28E07C00101E76 /* PPBatchUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchUtils.swift; sourceTree = "<group>"; };
-		10CFEFA81E2CB75B009AFBCB /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
-		10CFEFAA1E2CB7CB009AFBCB /* DataStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreController.swift; sourceTree = "<group>"; };
+		107762411E24E4F1008D534D /* Batching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Batching.h; path = ../Batching.h; sourceTree = "<group>"; };
+		107762421E24E4F1008D534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		107762491E24E7D6008D534D /* PPBatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBatchManager.swift; path = ../PPBatchManager.swift; sourceTree = "<group>"; };
+		1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBatchStrategies.swift; path = ../PPBatchStrategies.swift; sourceTree = "<group>"; };
+		108B83D41E28E07C00101E76 /* PPBatchUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBatchUtils.swift; path = ../PPBatchUtils.swift; sourceTree = "<group>"; };
+		10CFEFAF1E2CB889009AFBCB /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		10CFEFB01E2CB889009AFBCB /* DataStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStoreController.swift; sourceTree = "<group>"; };
 		2147E156D6C34F3D296B496D /* Pods-Batching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Batching.release.xcconfig"; path = "Pods/Target Support Files/Pods-Batching/Pods-Batching.release.xcconfig"; sourceTree = "<group>"; };
 		2638BC246F98F5B2BE7F8724 /* Pods-Batching.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Batching.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Batching/Pods-Batching.debug.xcconfig"; sourceTree = "<group>"; };
 		967F3DAAED55CC988AE3617C /* Pods_Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,23 +63,39 @@
 		107762401E24E4F1008D534D /* Batching */ = {
 			isa = PBXGroup;
 			children = (
-				10CFEFA61E2CB742009AFBCB /* Core Data */,
-				107762491E24E7D6008D534D /* PPBatchManager.swift */,
-				1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */,
-				107762411E24E4F1008D534D /* Batching.h */,
-				107762421E24E4F1008D534D /* Info.plist */,
-				108B83D41E28E07C00101E76 /* PPBatchUtils.swift */,
+				10CFEFB41E2CB8BB009AFBCB /* Support Files */,
+				10CFEFB31E2CB8A4009AFBCB /* Core */,
+				10CFEFAD1E2CB889009AFBCB /* Core Data */,
 			);
 			path = Batching;
 			sourceTree = "<group>";
 		};
-		10CFEFA61E2CB742009AFBCB /* Core Data */ = {
+		10CFEFAD1E2CB889009AFBCB /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				10CFEFA71E2CB75B009AFBCB /* DataModel.xcdatamodeld */,
-				10CFEFAA1E2CB7CB009AFBCB /* DataStoreController.swift */,
+				10CFEFAE1E2CB889009AFBCB /* DataModel.xcdatamodeld */,
+				10CFEFB01E2CB889009AFBCB /* DataStoreController.swift */,
 			);
 			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		10CFEFB31E2CB8A4009AFBCB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				107762491E24E7D6008D534D /* PPBatchManager.swift */,
+				1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */,
+				108B83D41E28E07C00101E76 /* PPBatchUtils.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		10CFEFB41E2CB8BB009AFBCB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				107762411E24E4F1008D534D /* Batching.h */,
+				107762421E24E4F1008D534D /* Info.plist */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 		A8CF48298D196A148E03CE66 /* Pods */ = {
@@ -215,9 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10CFEFAB1E2CB7CB009AFBCB /* DataStoreController.swift in Sources */,
+				10CFEFB21E2CB889009AFBCB /* DataStoreController.swift in Sources */,
 				108B83D51E28E07C00101E76 /* PPBatchUtils.swift in Sources */,
-				10CFEFA91E2CB75B009AFBCB /* DataModel.xcdatamodeld in Sources */,
+				10CFEFB11E2CB889009AFBCB /* DataModel.xcdatamodeld in Sources */,
 				1077624C1E24E7D6008D534D /* PPBatchManager.swift in Sources */,
 				1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */,
 			);
@@ -396,12 +412,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		10CFEFA71E2CB75B009AFBCB /* DataModel.xcdatamodeld */ = {
+		10CFEFAE1E2CB889009AFBCB /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				10CFEFA81E2CB75B009AFBCB /* DataModel.xcdatamodel */,
+				10CFEFAF1E2CB889009AFBCB /* DataModel.xcdatamodel */,
 			);
-			currentVersion = 10CFEFA81E2CB75B009AFBCB /* DataModel.xcdatamodel */;
+			currentVersion = 10CFEFAF1E2CB889009AFBCB /* DataModel.xcdatamodel */;
 			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
