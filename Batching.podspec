@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "git@gitlab.phonepe.com:iOS/PPPodSpecs.git", :tag => "#{s.version}" }
+  s.source       = { :git => "git@gitlab.phonepe.com:iOS/Batching.git", :tag => "#{s.version}" }
 
 
   s.source_files  = "Batching", "Batching/**/*.{swift}"
