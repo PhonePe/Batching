@@ -21,32 +21,20 @@ public class PPBatchManager {
     fileprivate let timeStrategy: PPTimeBatchingStrategy
     fileprivate let batchingQueue = DispatchQueue(label: "batching.library.queue")
     fileprivate var isUploadingEvents = false
-    fileprivate let database: YapDatabase
+    fileprivate var database: YapDatabase!
     fileprivate var timer: Timer? = nil
+    fileprivate let dbName: String
     
     public weak var delegate: PPBatchManagerDelegate?
     
     public var debugEnabled = false
     
-    
-    fileprivate var databasePath: String = {
-    
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let eventsPath = (documentsPath as NSString).appendingPathComponent("Event Batching")
-        
-        PPBatchUtils.createDirectoryIfNotExists(at: eventsPath)
-        
-        let finalPath = (eventsPath as NSString).appendingPathComponent("EventsDB.sqlite")
-        
-        return finalPath
-        
-    }()
-    
-    
-    public init(sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy) {
+    public init(sizeStrategy: PPSizeBatchingStrategy,  timeStrategy: PPTimeBatchingStrategy, dbName: String) {
         self.sizeStrategy = sizeStrategy
         self.timeStrategy = timeStrategy
-        self.database = YapDatabase(path: databasePath, options: nil)
+        self.dbName = dbName
+        
+        self.database = YapDatabase(path: databasePath(), options: nil)
         
         scheduleTimer()
         
@@ -215,6 +203,19 @@ public class PPBatchManager {
         if let timer = timer {
             RunLoop.main.add(timer, forMode: .commonModes)
         }
+        
+    }
+    
+    fileprivate func databasePath() -> String {
+    
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let eventsPath = (documentsPath as NSString).appendingPathComponent("Event Batching")
+        
+        PPBatchUtils.createDirectoryIfNotExists(at: eventsPath)
+        
+        let finalPath = (eventsPath as NSString).appendingPathComponent("\(dbName).sqlite")
+        
+        return finalPath
         
     }
     
