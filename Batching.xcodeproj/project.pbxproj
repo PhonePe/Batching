@@ -12,19 +12,19 @@
 		1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */; };
 		108B83D51E28E07C00101E76 /* PPBatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B83D41E28E07C00101E76 /* PPBatchUtils.swift */; };
 		10FE01831E9E4010003F1ABE /* PPBatchDataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE01821E9E4010003F1ABE /* PPBatchDataStoreController.swift */; };
-		10FE01861E9E54E8003F1ABE /* BatchingDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10FE01841E9E54E8003F1ABE /* BatchingDataModel.xcdatamodeld */; };
+		10FE01AE1E9EF4AB003F1ABE /* BatchingDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10FE01AB1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodeld */; };
 		7313B8C8D665603FFA4C2878 /* Pods_Batching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967F3DAAED55CC988AE3617C /* Pods_Batching.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1077623E1E24E4F1008D534D /* Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		107762411E24E4F1008D534D /* Batching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Batching.h; path = ../Batching.h; sourceTree = "<group>"; };
-		107762421E24E4F1008D534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		107762491E24E7D6008D534D /* PPBatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBatchManager.swift; path = ../PPBatchManager.swift; sourceTree = "<group>"; };
-		1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBatchStrategies.swift; path = ../PPBatchStrategies.swift; sourceTree = "<group>"; };
-		108B83D41E28E07C00101E76 /* PPBatchUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBatchUtils.swift; path = ../PPBatchUtils.swift; sourceTree = "<group>"; };
-		10FE01821E9E4010003F1ABE /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBatchDataStoreController.swift; path = ../PPBatchDataStoreController.swift; sourceTree = "<group>"; };
-		10FE01851E9E54E8003F1ABE /* BatchingDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BatchingDataModel.xcdatamodel; sourceTree = "<group>"; };
+		107762411E24E4F1008D534D /* Batching.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Batching.h; sourceTree = "<group>"; };
+		107762421E24E4F1008D534D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107762491E24E7D6008D534D /* PPBatchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchManager.swift; sourceTree = "<group>"; };
+		1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchStrategies.swift; sourceTree = "<group>"; };
+		108B83D41E28E07C00101E76 /* PPBatchUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchUtils.swift; sourceTree = "<group>"; };
+		10FE01821E9E4010003F1ABE /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchDataStoreController.swift; sourceTree = "<group>"; };
+		10FE01AC1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BatchingDataModel.xcdatamodel; sourceTree = "<group>"; };
 		2147E156D6C34F3D296B496D /* Pods-Batching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Batching.release.xcconfig"; path = "Pods/Target Support Files/Pods-Batching/Pods-Batching.release.xcconfig"; sourceTree = "<group>"; };
 		2638BC246F98F5B2BE7F8724 /* Pods-Batching.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Batching.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Batching/Pods-Batching.debug.xcconfig"; sourceTree = "<group>"; };
 		967F3DAAED55CC988AE3617C /* Pods_Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,11 +82,10 @@
 		10FE01A81E9EF254003F1ABE /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				10FE01AB1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodeld */,
 				10FE01821E9E4010003F1ABE /* PPBatchDataStoreController.swift */,
-				10FE01841E9E54E8003F1ABE /* BatchingDataModel.xcdatamodeld */,
 			);
-			name = Persistence;
-			path = Persist;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		10FE01A91E9EF29D003F1ABE /* Core */ = {
@@ -96,8 +95,7 @@
 				1077624A1E24E7D6008D534D /* PPBatchStrategies.swift */,
 				108B83D41E28E07C00101E76 /* PPBatchUtils.swift */,
 			);
-			name = Core;
-			path = "Core 2";
+			path = Core;
 			sourceTree = "<group>";
 		};
 		A8CF48298D196A148E03CE66 /* Pods */ = {
@@ -236,7 +234,7 @@
 				10FE01831E9E4010003F1ABE /* PPBatchDataStoreController.swift in Sources */,
 				108B83D51E28E07C00101E76 /* PPBatchUtils.swift in Sources */,
 				1077624C1E24E7D6008D534D /* PPBatchManager.swift in Sources */,
-				10FE01861E9E54E8003F1ABE /* BatchingDataModel.xcdatamodeld in Sources */,
+				10FE01AE1E9EF4AB003F1ABE /* BatchingDataModel.xcdatamodeld in Sources */,
 				1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +352,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Batching/Info.plist;
+				INFOPLIST_FILE = "Batching/Support Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -378,7 +376,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Batching/Info.plist;
+				INFOPLIST_FILE = "Batching/Support Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -414,14 +412,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		10FE01841E9E54E8003F1ABE /* BatchingDataModel.xcdatamodeld */ = {
+		10FE01AB1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				10FE01851E9E54E8003F1ABE /* BatchingDataModel.xcdatamodel */,
+				10FE01AC1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodel */,
 			);
-			currentVersion = 10FE01851E9E54E8003F1ABE /* BatchingDataModel.xcdatamodel */;
-			name = BatchingDataModel.xcdatamodeld;
-			path = ../BatchingDataModel.xcdatamodeld;
+			currentVersion = 10FE01AC1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodel */;
+			path = BatchingDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
