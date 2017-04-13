@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "git@gitlab.phonepe.com:iOS/Batching.git", :tag => "#{s.version}" }
 
 
-  s.source_files  = "Batching", "Batching/**/*.{swift}"
+  s.source_files  = "Batching", "Batching/**/*.{swift}, Batching/**/*.{xcdatamodel}"
 
   s.frameworks = "UIKit", "Foundation"
 
