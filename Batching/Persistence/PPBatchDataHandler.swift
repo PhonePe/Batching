@@ -139,6 +139,30 @@ final class PPBatchDataHandler {
         return eventDatas
     }
     
+    func countOfEvents() -> Int {
+        
+        var count = 0
+        
+        guard let moc = dataStoreController.managedObjectContext else {
+            assert(false, "moc not initialized")
+            return count
+        }
+        
+        moc.performAndWait {
+            
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+            
+            do {
+                count = try moc.count(for: request)
+            } catch {
+                assert(false, "Could not fetch count error: \(error)")
+            }
+            
+        }
+        
+        return count
+    }
+    
     static func fetchRequestForEventWith(ids: Set<String>) -> NSFetchRequest<NSFetchRequestResult> {
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
         fetch.predicate = NSPredicate(format: "ids IN %@", ids)
