@@ -3,7 +3,6 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'Batching' do
-    pod 'YapDatabase'
 end
 
 post_install do |installer|
