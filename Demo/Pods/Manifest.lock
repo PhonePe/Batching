@@ -1,5 +1,5 @@
 PODS:
-  - Batching (1.0.0)
+  - Batching (1.1.0)
 
 DEPENDENCIES:
   - Batching (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Batching: deca2da1e09265a590752e13f748fb74db31b9c3
+  Batching: dc7f389c70a2c11de7acae19656908438e8c5e9e
 
 PODFILE CHECKSUM: d9eb8248a6937aac31854a692a020986b192927d
 

@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C3549868271D6AB57022A31CD8D9ADE /* PPBatchDataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BF3E3728FBD2EC760493D3F80EDB9 /* PPBatchDataStoreController.swift */; };
+		12A39597710DFF4D015006C304BCC237 /* PPBatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6388ECC6B3EF615281AAA50E90C8D /* PPBatchUtils.swift */; };
 		232D046C4FA6C0270C15CF6B63A7CE8C /* BatchingDataModel.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = C08C9A436C69347B8708AECDBC0ECB60 /* BatchingDataModel.xcdatamodeld */; };
 		2D9CE5F11A0BF40F558F8A273B8D12AF /* Batching.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 177C48A71ABCDA7C564DA3547761A88C /* Batching.bundle */; };
-		33C50031BCCA96176DE08E0943D1AEA1 /* PPBatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B5641CB65007E6FE25F11D7C35F152 /* PPBatchManager.swift */; };
-		39C441B08FC49B622BB5EB8C6C3520C6 /* PPBatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B6388ECC6B3EF615281AAA50E90C8D /* PPBatchUtils.swift */; };
+		346B35279407BC419DC5898BCDC55DED /* PPBatchEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56399D8E93DDCFBC4A2D7D71D81B6CC /* PPBatchEvent+CoreDataClass.swift */; };
 		4452C7C8735F27D4C0BEF85BACC124F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
-		4F3E537FC073A52A1C02177BB67EA9BD /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9605BC1AE36DA21A9249F5C2407DBC /* Event+CoreDataClass.swift */; };
-		5A399918E89EEC8B2821805C5F332937 /* Batching-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AC20DBCAEDF70A0D1D689EE4C9D3E3 /* Batching-dummy.m */; };
-		952914F8DFA5A5CAF2AE60426AF70C52 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489FC44FD82A750F0CE14DCAE3D8F7AC /* Event+CoreDataProperties.swift */; };
+		44DA8F5972A0433F7E28D1293075FEE4 /* PPBatchDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B7496C5D20E0FFBE419A580A918B77 /* PPBatchDataHandler.swift */; };
+		5175786C8395A001BD66AEB8578C5DE5 /* Batching-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7AC20DBCAEDF70A0D1D689EE4C9D3E3 /* Batching-dummy.m */; };
+		62E7271FB2A46D76AE14B4C7C9D0E7A5 /* PPBatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B5641CB65007E6FE25F11D7C35F152 /* PPBatchManager.swift */; };
+		7FA4D12EA2CABD05BE593BC5C53AD2C8 /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C5CC5A2C1A59AEAFBF5EAE329F0D7 /* PPBatchStrategies.swift */; };
+		8BA353FD5B9F76174EE99853DE487BAD /* PPBatchEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF0EA7A7AFB3EF28E90E3E94FC0B217 /* PPBatchEvent+CoreDataProperties.swift */; };
 		DDBA140778AD9D899C6C8D4E32AAF556 /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BC86D40B890A7B0844F888209CA06F /* Pods-Demo-dummy.m */; };
-		DF112F2491244CBE76ABC0D78CFBD891 /* PPBatchDataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0059EC88FC8C3E446090A963937AA92 /* PPBatchDataStoreController.swift */; };
 		DFBA4CA3C637E2A5BE2B05210EBA1C15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
 		E20CF89C5EB0E573B4926AE6EA87C081 /* Batching-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB0FA454580B0794861ADB6DE183FFD /* Batching-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECAD6CEE9D7F974DDA52030A3458B970 /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09C5CC5A2C1A59AEAFBF5EAE329F0D7 /* PPBatchStrategies.swift */; };
 		ECB745E8A1C317AF079542DAB007EFD5 /* Pods-Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03EA1E60232BFA05817BC26ACB8E68BA /* Pods-Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F80453281C097B1592ED158D03562E02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		F9E302C6D1F95C8BBF5126962322B23D /* PPBatchDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD50241B83A2756DD1F66053BA551A5 /* PPBatchDataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		03EA1E60232BFA05817BC26ACB8E68BA /* Pods-Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Demo-umbrella.h"; sourceTree = "<group>"; };
 		0625E05440E89BFAF4436FC64E6AA5A8 /* BatchingDataModel.xcdatamodel */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.xcdatamodel; path = BatchingDataModel.xcdatamodel; sourceTree = "<group>"; };
 		0B0CF4CC710CCD93402B67B7269A9FFF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D9605BC1AE36DA21A9249F5C2407DBC /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		177C48A71ABCDA7C564DA3547761A88C /* Batching.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Batching.bundle; path = Batching.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB0FA454580B0794861ADB6DE183FFD /* Batching-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Batching-umbrella.h"; sourceTree = "<group>"; };
 		21E7615B4D326C9D41603394B88AF1A0 /* Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Batching.framework; path = Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,25 +53,26 @@
 		3CD5A30239C90F1B549B4AB9299ECF16 /* Pods-Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-frameworks.sh"; sourceTree = "<group>"; };
 		3D653C9DA16200D75AD14323AA830C6B /* Pods-Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-resources.sh"; sourceTree = "<group>"; };
 		43B6388ECC6B3EF615281AAA50E90C8D /* PPBatchUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchUtils.swift; sourceTree = "<group>"; };
-		489FC44FD82A750F0CE14DCAE3D8F7AC /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60B5641CB65007E6FE25F11D7C35F152 /* PPBatchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchManager.swift; sourceTree = "<group>"; };
 		6165C110CF15D995EB99A7CC836CE151 /* Batching.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Batching.modulemap; sourceTree = "<group>"; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		71940C1CEB7995DC34CFE54CAF1AEF88 /* Pods-Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		72999653BCA482BDFDBE5DF2DEE9FC20 /* Batching-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Batching-prefix.pch"; sourceTree = "<group>"; };
+		7BF0EA7A7AFB3EF28E90E3E94FC0B217 /* PPBatchEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "PPBatchEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		81CD5701D4BCED52E935A537D2577707 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Demo.framework; path = "Pods-Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88D874E7D37D446C0CDF8B3DA4A01C91 /* ResourceBundle-Batching-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Batching-Info.plist"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9AD50241B83A2756DD1F66053BA551A5 /* PPBatchDataHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchDataHandler.swift; sourceTree = "<group>"; };
+		956BF3E3728FBD2EC760493D3F80EDB9 /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchDataStoreController.swift; sourceTree = "<group>"; };
+		A56399D8E93DDCFBC4A2D7D71D81B6CC /* PPBatchEvent+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "PPBatchEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AB21832B08A30FC0241665B10CC951CB /* Batching.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Batching.xcconfig; sourceTree = "<group>"; };
-		B0059EC88FC8C3E446090A963937AA92 /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchDataStoreController.swift; sourceTree = "<group>"; };
 		C5BC86D40B890A7B0844F888209CA06F /* Pods-Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Demo-dummy.m"; sourceTree = "<group>"; };
 		C7AC20DBCAEDF70A0D1D689EE4C9D3E3 /* Batching-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Batching-dummy.m"; sourceTree = "<group>"; };
 		CA19694C0AC41D598DE4ABFEB300E619 /* Pods-Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Demo-acknowledgements.plist"; sourceTree = "<group>"; };
 		CC6A59B0ADA6CB2F51DAE6508E437829 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		D09C5CC5A2C1A59AEAFBF5EAE329F0D7 /* PPBatchStrategies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchStrategies.swift; sourceTree = "<group>"; };
 		DAB0701F8F25395B1ED46510ED4B9797 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		E2B7496C5D20E0FFBE419A580A918B77 /* PPBatchDataHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchDataHandler.swift; sourceTree = "<group>"; };
 		E68F8C86FB3267A3C87983DA9E269889 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				2AE907E598356E0A5C046C5FA87DE6AA /* Core */,
-				7ECCEECC4320497501EE88447C9C8334 /* Persistence */,
+				838E864A581D881CADBD3F048153D2F0 /* Persistence */,
 			);
 			name = Batching;
 			path = Batching;
@@ -198,13 +198,13 @@
 			);
 			sourceTree = "<group>";
 		};
-		7ECCEECC4320497501EE88447C9C8334 /* Persistence */ = {
+		838E864A581D881CADBD3F048153D2F0 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				0D9605BC1AE36DA21A9249F5C2407DBC /* Event+CoreDataClass.swift */,
-				489FC44FD82A750F0CE14DCAE3D8F7AC /* Event+CoreDataProperties.swift */,
-				9AD50241B83A2756DD1F66053BA551A5 /* PPBatchDataHandler.swift */,
-				B0059EC88FC8C3E446090A963937AA92 /* PPBatchDataStoreController.swift */,
+				E2B7496C5D20E0FFBE419A580A918B77 /* PPBatchDataHandler.swift */,
+				956BF3E3728FBD2EC760493D3F80EDB9 /* PPBatchDataStoreController.swift */,
+				A56399D8E93DDCFBC4A2D7D71D81B6CC /* PPBatchEvent+CoreDataClass.swift */,
+				7BF0EA7A7AFB3EF28E90E3E94FC0B217 /* PPBatchEvent+CoreDataProperties.swift */,
 			);
 			name = Persistence;
 			path = Persistence;
@@ -305,7 +305,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC50854C03754C431354C6169C0B2CEC /* Build configuration list for PBXNativeTarget "Batching" */;
 			buildPhases = (
-				5190B63454A6605A05BE6F095A3D99EF /* Sources */,
+				D4DA7755184A59D4C59547ED8039965D /* Sources */,
 				AC9FF8AE249B6D1C6C678531C08EAA45 /* Frameworks */,
 				4F38A10EE2E0869BD047C959F4B169B7 /* Resources */,
 				7FE7E21A86E288AA4EEA82936813A4DA /* Headers */,
@@ -392,26 +392,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5190B63454A6605A05BE6F095A3D99EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A399918E89EEC8B2821805C5F332937 /* Batching-dummy.m in Sources */,
-				4F3E537FC073A52A1C02177BB67EA9BD /* Event+CoreDataClass.swift in Sources */,
-				952914F8DFA5A5CAF2AE60426AF70C52 /* Event+CoreDataProperties.swift in Sources */,
-				F9E302C6D1F95C8BBF5126962322B23D /* PPBatchDataHandler.swift in Sources */,
-				DF112F2491244CBE76ABC0D78CFBD891 /* PPBatchDataStoreController.swift in Sources */,
-				33C50031BCCA96176DE08E0943D1AEA1 /* PPBatchManager.swift in Sources */,
-				ECAD6CEE9D7F974DDA52030A3458B970 /* PPBatchStrategies.swift in Sources */,
-				39C441B08FC49B622BB5EB8C6C3520C6 /* PPBatchUtils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BF88276BD5E22B8F8E86761A77FC26AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DDBA140778AD9D899C6C8D4E32AAF556 /* Pods-Demo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DA7755184A59D4C59547ED8039965D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5175786C8395A001BD66AEB8578C5DE5 /* Batching-dummy.m in Sources */,
+				44DA8F5972A0433F7E28D1293075FEE4 /* PPBatchDataHandler.swift in Sources */,
+				0C3549868271D6AB57022A31CD8D9ADE /* PPBatchDataStoreController.swift in Sources */,
+				346B35279407BC419DC5898BCDC55DED /* PPBatchEvent+CoreDataClass.swift in Sources */,
+				8BA353FD5B9F76174EE99853DE487BAD /* PPBatchEvent+CoreDataProperties.swift in Sources */,
+				62E7271FB2A46D76AE14B4C7C9D0E7A5 /* PPBatchManager.swift in Sources */,
+				7FA4D12EA2CABD05BE593BC5C53AD2C8 /* PPBatchStrategies.swift in Sources */,
+				12A39597710DFF4D015006C304BCC237 /* PPBatchUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

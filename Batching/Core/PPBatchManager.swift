@@ -171,19 +171,6 @@ public class PPBatchManager {
         
     }
     
-    fileprivate func databasePath() -> String {
-    
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let eventsPath = (documentsPath as NSString).appendingPathComponent("Event Batching")
-        
-        PPBatchUtils.createDirectoryIfNotExists(at: eventsPath)
-        
-        let finalPath = (eventsPath as NSString).appendingPathComponent("\(dbName).sqlite")
-        
-        return finalPath
-        
-    }
-    
     //This is a wrapper to make sure self is deinitialised properly
     final private class PPBatchManagerWrapper {
         

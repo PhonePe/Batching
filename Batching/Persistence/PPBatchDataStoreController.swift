@@ -97,7 +97,7 @@ class PPBatchDataStoreController {
     fileprivate static func databasePath(dbName: String) -> String {
         
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let eventsPath = (documentsPath as NSString).appendingPathComponent("Event Batching")
+        let eventsPath = (documentsPath as NSString).appendingPathComponent("Event_Batching")
         
         PPBatchUtils.createDirectoryIfNotExists(at: eventsPath)
         
