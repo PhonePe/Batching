@@ -18,5 +18,6 @@ extension Event {
 
     @NSManaged public var data: NSData?
     @NSManaged public var id: String?
+    @NSManaged public var timestamp: Double
 
 }

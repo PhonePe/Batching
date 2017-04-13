@@ -3,8 +3,9 @@
     <entity name="Event" representedClassName="Event" syncable="YES">
         <attribute name="data" attributeType="Binary" syncable="YES"/>
         <attribute name="id" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>
