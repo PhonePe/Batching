@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "git@gitlab.phonepe.com:iOS/Batching.git", :tag => "#{s.version}" }
   s.source_files  = "Batching", "Batching/**/*.{swift}"
-  spec.resource_bundles = {'Batching' => ['Batching/Resources/**/*']}
+  s.resource_bundles = {'Batching' => ['Batching/Resources/**/*']}
   s.frameworks = "UIKit", "Foundation"
   s.requires_arc = true
 
