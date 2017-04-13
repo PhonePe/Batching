@@ -48,20 +48,15 @@ public class PPBatchManager {
         timer?.invalidate()
     }
     
-    public func addToBatch(_ event: NSObject) {
+    public func addToBatch(_ event: NSObject, timestamp: Double) {
         
         batchingQueue.async {
-
+            
             //1. Assign eventID (UUID)
-            //2. Store in the YapDB
+            //2. Store in the DB
             
             let eventID = UUID().uuidString
-            let connection = self.newDBConnection()
-            
-            connection.readWrite({ (transaction) in
-                transaction.setObject(event, forKey: eventID, inCollection: nil)
-            })
-                
+            self.dataHandler?.save(event: event, id: eventID, timestamp: timestamp)
             self.flush(false)
             
         }
@@ -72,12 +67,7 @@ public class PPBatchManager {
         
         batchingQueue.async {
         
-            let connection = self.newDBConnection()
-            var count: UInt = 0
-            
-            connection.read({ (transaction) in
-                count = transaction.numberOfKeysInAllCollections()
-            })
+            let count = self.dataHandler?.countOfEvents() ?? 0
 
             //Check the strategies and count of events here
             
@@ -107,23 +97,13 @@ public class PPBatchManager {
         
         self.isUploadingEvents = true
         
-        //1. Get events from YapDB
+        //1. Get events from DB
         
-        let connection = self.newDBConnection()
+        let result = self.dataHandler?.fetchEventDatas(count: Int(self.sizeStrategy.eventsBeforeIngestion))
         
-        connection.read({ (transaction) in
-            
-            var allObjects = [Any]()
-            var allKeys = [String]()
-            
-            transaction.enumerateKeysAndObjects(inCollection: nil, using: { (key, object, _) in                
-                allObjects.append(object)
-                allKeys.append(key)
-            })
-            
-            self.sendBatchWith(allObjects, forKeys: allKeys, completion: completion)
-        })
-            
+        if let eventDatas = result?.datas, let ids = result?.ids {
+            self.sendBatchWith(eventDatas, forKeys: ids, completion: completion)
+        }
         
     }
     
@@ -171,17 +151,7 @@ public class PPBatchManager {
         batchingQueue.async {
         
             //Remove all objects for corresponding keys from YapDB
-            
-            let connection = self.newDBConnection()
-            
-            connection.readWrite({ (transaction) in
-                
-                for key in ids {
-                    transaction.removeObject(forKey: key, inCollection: nil)
-                }
-                
-            })
-            
+            self.dataHandler?.deleteEventsWith(ids: Set(ids))
             completion()
             
         }
