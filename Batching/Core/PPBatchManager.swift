@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import YapDatabase
 
 typealias EventIngestionCompletion = (Bool, Error?, [String]) -> Void
 
@@ -21,7 +20,6 @@ public class PPBatchManager {
     fileprivate let timeStrategy: PPTimeBatchingStrategy
     fileprivate let batchingQueue = DispatchQueue(label: "batching.library.queue")
     fileprivate var isUploadingEvents = false
-    fileprivate var database: YapDatabase!
     fileprivate var timer: Timer? = nil
     fileprivate let dbName: String
     fileprivate let dataHandler: PPBatchDataHandler?
@@ -36,7 +34,6 @@ public class PPBatchManager {
         self.dbName = dbName
         
         self.dataHandler = PPBatchDataHandler(dbName: dbName)
-        self.database = YapDatabase(path: databasePath(), options: nil)
         
         scheduleTimer()
         
@@ -158,11 +155,7 @@ public class PPBatchManager {
         
         
     }
-    
-    fileprivate func newDBConnection() -> YapDatabaseConnection {
-        return self.database.newConnection()
-    }
-    
+        
     fileprivate func scheduleTimer() {
         
         guard timer == nil else { return }
