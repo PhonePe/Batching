@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TestEvent: NSObject {
+class TestEvent: NSObject, NSCoding {
 
     var name: String
     
@@ -16,4 +16,11 @@ class TestEvent: NSObject {
         self.name = name
     }
     
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: "name")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.name = aDecoder.decodeObject(forKey: "name") as! String
+    }
 }
