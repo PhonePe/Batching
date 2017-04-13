@@ -9,6 +9,11 @@
 import Foundation
 import CoreData
 
+struct PPEventDataFetchResult {
+    let datas: [Any]?
+    let ids: [String]?
+}
+
 final class PPBatchDataHandler {
     
     private let dataStoreController: PPBatchDataStoreController
@@ -99,13 +104,14 @@ final class PPBatchDataHandler {
         
     }
     
-    func fetchEventDatas(count: Int) -> [Any]? {
+    func fetchEventDatas(count: Int) -> PPEventDataFetchResult {
         
         var eventDatas = [Any]()
+        var ids = [String]()
         
         guard let moc = dataStoreController.managedObjectContext else {
             assert(false, "moc not initialized")
-            return eventDatas
+            return PPEventDataFetchResult(datas: nil, ids: nil)
         }
         
         moc.performAndWait {
@@ -123,6 +129,10 @@ final class PPBatchDataHandler {
                             eventDatas.append(finalData)
                         }
                         
+                        if let id = event.id {
+                            ids.append(id)
+                        }
+                        
                     }
                     
                 }
@@ -134,9 +144,11 @@ final class PPBatchDataHandler {
         }
         
         
+        if eventDatas.count == 0 || ids.count == 0 {
+            return PPEventDataFetchResult(datas: nil, ids: nil)
+        }
         
-        
-        return eventDatas
+        return PPEventDataFetchResult(datas: eventDatas, ids: ids)
     }
     
     func countOfEvents() -> Int {
