@@ -7,71 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D9CE5F11A0BF40F558F8A273B8D12AF /* Batching.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 177C48A71ABCDA7C564DA3547761A88C /* Batching.bundle */; };
-		33C50031BCCA96176DE08E0943D1AEA1 /* PPBatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB777996B3131471C4FCD739A2F70B0 /* PPBatchManager.swift */; };
-		39C441B08FC49B622BB5EB8C6C3520C6 /* PPBatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1EC3209292C9B2BA5EAD780E1395F /* PPBatchUtils.swift */; };
-		4452C7C8735F27D4C0BEF85BACC124F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
-		4F3E537FC073A52A1C02177BB67EA9BD /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAAE386CCE48667A9FC9A922837BD26 /* Event+CoreDataClass.swift */; };
-		5A399918E89EEC8B2821805C5F332937 /* Batching-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DB34926364C720E996DFF106E197046 /* Batching-dummy.m */; };
-		952914F8DFA5A5CAF2AE60426AF70C52 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC849FA1E17DC521A169D2AAA7DD317 /* Event+CoreDataProperties.swift */; };
+		01FE4F6B23134C0E4C409D67B527BB51 /* PPBatchDataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCED0D1B7032172C5B1A4EEC92C19F2 /* PPBatchDataStoreController.swift */; };
+		1C6B0B30F002E7DA3702700C421E6B0F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		3910118B72FBFAF41E47B2545A7A5A8B /* PPBatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86748A356A30C88FEC27735E8527DF17 /* PPBatchManager.swift */; };
+		4D1CAD67CE73F00B1B97D98F2D57FA0E /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B763ABBB853A36C049494C4920C6DA /* PPBatchStrategies.swift */; };
+		5351AEF4A6DDF34A46A91BD80E945324 /* PPBatchDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80CB14520B159D6B1288B8B2BBCBAFD /* PPBatchDataHandler.swift */; };
+		60E65473668B20BAA3DFE5146ED9E717 /* Batching-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7872336CD2CDE010EA3046F57E322DF6 /* Batching-dummy.m */; };
+		6344B85CE6F7BBA46C60BF1C0DF3E443 /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB88EE6921CD2B877F8D016ECFA13C5 /* Event+CoreDataProperties.swift */; };
+		70D535B6B112E293FE1C3CA98B4B8C53 /* Batching-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F6CF93FD3202EE5358B6A52FD1DB334 /* Batching-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		86E0FC14AB854697C6C7BF00F853B235 /* PPBatchUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2876BC5E9006E09E77A9EEB7EB14C7F4 /* PPBatchUtils.swift */; };
+		9A3F08CE3165783C19FCA63E1B5DC09D /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C11170E209BA8C3386DFBB90EBBCBBF /* Event+CoreDataClass.swift */; };
+		9BEF661F81D2D588C5764BF8BCD4416D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
 		DDBA140778AD9D899C6C8D4E32AAF556 /* Pods-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BC86D40B890A7B0844F888209CA06F /* Pods-Demo-dummy.m */; };
-		DF112F2491244CBE76ABC0D78CFBD891 /* PPBatchDataStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92BC99EDB09425F95234F633304FC6 /* PPBatchDataStoreController.swift */; };
 		DFBA4CA3C637E2A5BE2B05210EBA1C15 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		E20CF89C5EB0E573B4926AE6EA87C081 /* Batching-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FE35E7FF03A9CB0F48E759B0C01A476 /* Batching-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ECAD6CEE9D7F974DDA52030A3458B970 /* PPBatchStrategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB64CDA563970DD3C5030934E54769 /* PPBatchStrategies.swift */; };
 		ECB745E8A1C317AF079542DAB007EFD5 /* Pods-Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 03EA1E60232BFA05817BC26ACB8E68BA /* Pods-Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F80453281C097B1592ED158D03562E02 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		F9E302C6D1F95C8BBF5126962322B23D /* PPBatchDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD69E25861FD626981E7B3F4DDD04FE7 /* PPBatchDataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4F9E7FD8343EEADDD7562F0ECE225CEE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F733CC2EB84CC66172C21023C5A7055F;
-			remoteInfo = "Batching-Batching";
-		};
 		8C35D91FE11A291AB326B9E4EDFBB310 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EA8DE917E1C2FD56322396A7169FC8F9;
+			remoteGlobalIDString = 8E95FA5F7BE666FE296E12F0C1BBAC59;
 			remoteInfo = Batching;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		03EA1E60232BFA05817BC26ACB8E68BA /* Pods-Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Demo-umbrella.h"; sourceTree = "<group>"; };
-		14F1C339D33FF12BEB8687CA4B14A1B5 /* Batching-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Batching-prefix.pch"; sourceTree = "<group>"; };
-		177C48A71ABCDA7C564DA3547761A88C /* Batching.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Batching.bundle; path = Batching.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C0AFBFD79B95552487BC58DBA7EA62C /* Batching.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Batching.xcconfig; sourceTree = "<group>"; };
-		21E7615B4D326C9D41603394B88AF1A0 /* Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Batching.framework; path = Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0446538F0F53705B80F0EF4143BB6553 /* Batching-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Batching-prefix.pch"; sourceTree = "<group>"; };
+		2876BC5E9006E09E77A9EEB7EB14C7F4 /* PPBatchUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchUtils.swift; sourceTree = "<group>"; };
 		322419E99883B306EE7EC77959FCC8DF /* Pods-Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Demo.modulemap"; sourceTree = "<group>"; };
 		3CD5A30239C90F1B549B4AB9299ECF16 /* Pods-Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-frameworks.sh"; sourceTree = "<group>"; };
 		3D653C9DA16200D75AD14323AA830C6B /* Pods-Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Demo-resources.sh"; sourceTree = "<group>"; };
-		4BB777996B3131471C4FCD739A2F70B0 /* PPBatchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchManager.swift; sourceTree = "<group>"; };
-		4DB34926364C720E996DFF106E197046 /* Batching-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Batching-dummy.m"; sourceTree = "<group>"; };
+		44B763ABBB853A36C049494C4920C6DA /* PPBatchStrategies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchStrategies.swift; sourceTree = "<group>"; };
+		4F6CF93FD3202EE5358B6A52FD1DB334 /* Batching-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Batching-umbrella.h"; sourceTree = "<group>"; };
+		5740AE06B121FAA39595B4560A326310 /* Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Batching.framework; path = Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AB88EE6921CD2B877F8D016ECFA13C5 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6BAAE386CCE48667A9FC9A922837BD26 /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
-		6EC849FA1E17DC521A169D2AAA7DD317 /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6FE35E7FF03A9CB0F48E759B0C01A476 /* Batching-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Batching-umbrella.h"; sourceTree = "<group>"; };
+		6C18FD2B8D6B83A4AE882CDE268D86F6 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Demo.framework; path = "Pods-Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71940C1CEB7995DC34CFE54CAF1AEF88 /* Pods-Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		72A060F7157662077726F920817E3E58 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7872336CD2CDE010EA3046F57E322DF6 /* Batching-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Batching-dummy.m"; sourceTree = "<group>"; };
+		7BCED0D1B7032172C5B1A4EEC92C19F2 /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchDataStoreController.swift; sourceTree = "<group>"; };
+		7C11170E209BA8C3386DFBB90EBBCBBF /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		81CD5701D4BCED52E935A537D2577707 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Demo.framework; path = "Pods-Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8BE941CBAB29F10D118027BD95041AFF /* ResourceBundle-Batching-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Batching-Info.plist"; sourceTree = "<group>"; };
+		86748A356A30C88FEC27735E8527DF17 /* PPBatchManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchManager.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9BC1EC3209292C9B2BA5EAD780E1395F /* PPBatchUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchUtils.swift; sourceTree = "<group>"; };
-		ADAB64CDA563970DD3C5030934E54769 /* PPBatchStrategies.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchStrategies.swift; sourceTree = "<group>"; };
-		BA92BC99EDB09425F95234F633304FC6 /* PPBatchDataStoreController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchDataStoreController.swift; sourceTree = "<group>"; };
-		BD69E25861FD626981E7B3F4DDD04FE7 /* PPBatchDataHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchDataHandler.swift; sourceTree = "<group>"; };
+		93CF8D4ECE2ACC10040204A0D6D21728 /* Batching.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Batching.modulemap; sourceTree = "<group>"; };
+		A80CB14520B159D6B1288B8B2BBCBAFD /* PPBatchDataHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PPBatchDataHandler.swift; sourceTree = "<group>"; };
 		C5BC86D40B890A7B0844F888209CA06F /* Pods-Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Demo-dummy.m"; sourceTree = "<group>"; };
 		CA19694C0AC41D598DE4ABFEB300E619 /* Pods-Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Demo-acknowledgements.plist"; sourceTree = "<group>"; };
 		CC6A59B0ADA6CB2F51DAE6508E437829 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		D6484BEFE3616382C7FACBBC352D8016 /* Batching.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Batching.modulemap; sourceTree = "<group>"; };
 		DAB0701F8F25395B1ED46510ED4B9797 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		E2849C794C295C0666B71882D22E6903 /* Batching.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Batching.xcconfig; sourceTree = "<group>"; };
 		E68F8C86FB3267A3C87983DA9E269889 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F54FC5FF10F87588C5BB020BE93796BA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,19 +73,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F20F304A005DA6DF962DB1930C89D5E /* Frameworks */ = {
+		DE563EB4F55F50441A29B0B684E81826 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AC9FF8AE249B6D1C6C678531C08EAA45 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F80453281C097B1592ED158D03562E02 /* Foundation.framework in Frameworks */,
-				4452C7C8735F27D4C0BEF85BACC124F3 /* UIKit.framework in Frameworks */,
+				1C6B0B30F002E7DA3702700C421E6B0F /* Foundation.framework in Frameworks */,
+				9BEF661F81D2D588C5764BF8BCD4416D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,17 +88,16 @@
 		096B766D578A19EE40B50FE735FA8F8D /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AB4E855929CDFAA3DAB2095850ED0858 /* Batching */,
+				6218F9BF7B5A4223C191C03CB076E9A7 /* Batching */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		284C8CF4B076EF523B741B8F00ABC4C1 /* Products */ = {
+		3AD133CDF0FB3BEB9F06E370F42129A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				177C48A71ABCDA7C564DA3547761A88C /* Batching.bundle */,
-				21E7615B4D326C9D41603394B88AF1A0 /* Batching.framework */,
-				81CD5701D4BCED52E935A537D2577707 /* Pods_Demo.framework */,
+				5740AE06B121FAA39595B4560A326310 /* Batching.framework */,
+				6C18FD2B8D6B83A4AE882CDE268D86F6 /* Pods_Demo.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,19 +110,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		57285D74327660954EF22FDF05B646CB /* Support Files */ = {
+		4E317BC698C734287F304C7DC661015E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D6484BEFE3616382C7FACBBC352D8016 /* Batching.modulemap */,
-				1C0AFBFD79B95552487BC58DBA7EA62C /* Batching.xcconfig */,
-				4DB34926364C720E996DFF106E197046 /* Batching-dummy.m */,
-				14F1C339D33FF12BEB8687CA4B14A1B5 /* Batching-prefix.pch */,
-				6FE35E7FF03A9CB0F48E759B0C01A476 /* Batching-umbrella.h */,
-				72A060F7157662077726F920817E3E58 /* Info.plist */,
-				8BE941CBAB29F10D118027BD95041AFF /* ResourceBundle-Batching-Info.plist */,
+				93CF8D4ECE2ACC10040204A0D6D21728 /* Batching.modulemap */,
+				E2849C794C295C0666B71882D22E6903 /* Batching.xcconfig */,
+				7872336CD2CDE010EA3046F57E322DF6 /* Batching-dummy.m */,
+				0446538F0F53705B80F0EF4143BB6553 /* Batching-prefix.pch */,
+				4F6CF93FD3202EE5358B6A52FD1DB334 /* Batching-umbrella.h */,
+				F54FC5FF10F87588C5BB020BE93796BA /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "Demo/Pods/Target Support Files/Batching";
+			sourceTree = "<group>";
+		};
+		6218F9BF7B5A4223C191C03CB076E9A7 /* Batching */ = {
+			isa = PBXGroup;
+			children = (
+				B23C94FC5FBBB586367784EE979C4C12 /* Batching */,
+				4E317BC698C734287F304C7DC661015E /* Support Files */,
+			);
+			name = Batching;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		6F2351C272926D3E0225FEFC2F9C5D1F /* Targets Support Files */ = {
@@ -157,52 +148,42 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				096B766D578A19EE40B50FE735FA8F8D /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				284C8CF4B076EF523B741B8F00ABC4C1 /* Products */,
+				3AD133CDF0FB3BEB9F06E370F42129A5 /* Products */,
 				6F2351C272926D3E0225FEFC2F9C5D1F /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8E68B6F65D7C05F44EC031FDC55BC51D /* Persistence */ = {
+		B23C94FC5FBBB586367784EE979C4C12 /* Batching */ = {
 			isa = PBXGroup;
 			children = (
-				6BAAE386CCE48667A9FC9A922837BD26 /* Event+CoreDataClass.swift */,
-				6EC849FA1E17DC521A169D2AAA7DD317 /* Event+CoreDataProperties.swift */,
-				BD69E25861FD626981E7B3F4DDD04FE7 /* PPBatchDataHandler.swift */,
-				BA92BC99EDB09425F95234F633304FC6 /* PPBatchDataStoreController.swift */,
+				B910F19D19E4B40582B32C6B793042C3 /* Core */,
+				CDECA4C56E9A998166762586C53EAC08 /* Persistence */,
 			);
-			name = Persistence;
-			path = Persistence;
+			name = Batching;
+			path = Batching;
 			sourceTree = "<group>";
 		};
-		A8ECA73C0584E1AB4AE7E322F8571F07 /* Core */ = {
+		B910F19D19E4B40582B32C6B793042C3 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				4BB777996B3131471C4FCD739A2F70B0 /* PPBatchManager.swift */,
-				ADAB64CDA563970DD3C5030934E54769 /* PPBatchStrategies.swift */,
-				9BC1EC3209292C9B2BA5EAD780E1395F /* PPBatchUtils.swift */,
+				86748A356A30C88FEC27735E8527DF17 /* PPBatchManager.swift */,
+				44B763ABBB853A36C049494C4920C6DA /* PPBatchStrategies.swift */,
+				2876BC5E9006E09E77A9EEB7EB14C7F4 /* PPBatchUtils.swift */,
 			);
 			name = Core;
 			path = Core;
 			sourceTree = "<group>";
 		};
-		AB4E855929CDFAA3DAB2095850ED0858 /* Batching */ = {
+		CDECA4C56E9A998166762586C53EAC08 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				CE020FF076C4249C1F9D66FE3B1797ED /* Batching */,
-				57285D74327660954EF22FDF05B646CB /* Support Files */,
+				7C11170E209BA8C3386DFBB90EBBCBBF /* Event+CoreDataClass.swift */,
+				5AB88EE6921CD2B877F8D016ECFA13C5 /* Event+CoreDataProperties.swift */,
+				A80CB14520B159D6B1288B8B2BBCBAFD /* PPBatchDataHandler.swift */,
+				7BCED0D1B7032172C5B1A4EEC92C19F2 /* PPBatchDataStoreController.swift */,
 			);
-			name = Batching;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		CE020FF076C4249C1F9D66FE3B1797ED /* Batching */ = {
-			isa = PBXGroup;
-			children = (
-				A8ECA73C0584E1AB4AE7E322F8571F07 /* Core */,
-				8E68B6F65D7C05F44EC031FDC55BC51D /* Persistence */,
-			);
-			name = Batching;
-			path = Batching;
+			name = Persistence;
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
@@ -235,11 +216,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		7FE7E21A86E288AA4EEA82936813A4DA /* Headers */ = {
+		5F07D8BDF150727D49805384EFD0FAAB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E20CF89C5EB0E573B4926AE6EA87C081 /* Batching-umbrella.h in Headers */,
+				70D535B6B112E293FE1C3CA98B4B8C53 /* Batching-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +235,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		8E95FA5F7BE666FE296E12F0C1BBAC59 /* Batching */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83E4D446AA60C474FDE3185F84E92F22 /* Build configuration list for PBXNativeTarget "Batching" */;
+			buildPhases = (
+				1722EF53F9701255E6E3084DE7AFEB84 /* Sources */,
+				DE563EB4F55F50441A29B0B684E81826 /* Frameworks */,
+				5F07D8BDF150727D49805384EFD0FAAB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Batching;
+			productName = Batching;
+			productReference = 5740AE06B121FAA39595B4560A326310 /* Batching.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		D1CF196071193867D4D4B8E1087EDB00 /* Pods-Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4309006D5E0DC02E42EC0742D362FD1B /* Build configuration list for PBXNativeTarget "Pods-Demo" */;
@@ -269,44 +267,8 @@
 			);
 			name = "Pods-Demo";
 			productName = "Pods-Demo";
-			productReference = 81CD5701D4BCED52E935A537D2577707 /* Pods_Demo.framework */;
+			productReference = 6C18FD2B8D6B83A4AE882CDE268D86F6 /* Pods_Demo.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		EA8DE917E1C2FD56322396A7169FC8F9 /* Batching */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC50854C03754C431354C6169C0B2CEC /* Build configuration list for PBXNativeTarget "Batching" */;
-			buildPhases = (
-				5190B63454A6605A05BE6F095A3D99EF /* Sources */,
-				AC9FF8AE249B6D1C6C678531C08EAA45 /* Frameworks */,
-				4F38A10EE2E0869BD047C959F4B169B7 /* Resources */,
-				7FE7E21A86E288AA4EEA82936813A4DA /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				804C47402934159BE3BE93776052930A /* PBXTargetDependency */,
-			);
-			name = Batching;
-			productName = Batching;
-			productReference = 21E7615B4D326C9D41603394B88AF1A0 /* Batching.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F733CC2EB84CC66172C21023C5A7055F /* Batching-Batching */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DF70E402195F9A93CAC0EF62DE4BECE3 /* Build configuration list for PBXNativeTarget "Batching-Batching" */;
-			buildPhases = (
-				38C931CD9D0656CD182DFF777261C7FA /* Sources */,
-				0F20F304A005DA6DF962DB1930C89D5E /* Frameworks */,
-				FD01FFE605C75129604FFD01A1662371 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Batching-Batching";
-			productName = "Batching-Batching";
-			productReference = 177C48A71ABCDA7C564DA3547761A88C /* Batching.bundle */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -325,55 +287,29 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 284C8CF4B076EF523B741B8F00ABC4C1 /* Products */;
+			productRefGroup = 3AD133CDF0FB3BEB9F06E370F42129A5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EA8DE917E1C2FD56322396A7169FC8F9 /* Batching */,
-				F733CC2EB84CC66172C21023C5A7055F /* Batching-Batching */,
+				8E95FA5F7BE666FE296E12F0C1BBAC59 /* Batching */,
 				D1CF196071193867D4D4B8E1087EDB00 /* Pods-Demo */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		4F38A10EE2E0869BD047C959F4B169B7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D9CE5F11A0BF40F558F8A273B8D12AF /* Batching.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FD01FFE605C75129604FFD01A1662371 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		38C931CD9D0656CD182DFF777261C7FA /* Sources */ = {
+		1722EF53F9701255E6E3084DE7AFEB84 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5190B63454A6605A05BE6F095A3D99EF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5A399918E89EEC8B2821805C5F332937 /* Batching-dummy.m in Sources */,
-				4F3E537FC073A52A1C02177BB67EA9BD /* Event+CoreDataClass.swift in Sources */,
-				952914F8DFA5A5CAF2AE60426AF70C52 /* Event+CoreDataProperties.swift in Sources */,
-				F9E302C6D1F95C8BBF5126962322B23D /* PPBatchDataHandler.swift in Sources */,
-				DF112F2491244CBE76ABC0D78CFBD891 /* PPBatchDataStoreController.swift in Sources */,
-				33C50031BCCA96176DE08E0943D1AEA1 /* PPBatchManager.swift in Sources */,
-				ECAD6CEE9D7F974DDA52030A3458B970 /* PPBatchStrategies.swift in Sources */,
-				39C441B08FC49B622BB5EB8C6C3520C6 /* PPBatchUtils.swift in Sources */,
+				60E65473668B20BAA3DFE5146ED9E717 /* Batching-dummy.m in Sources */,
+				9A3F08CE3165783C19FCA63E1B5DC09D /* Event+CoreDataClass.swift in Sources */,
+				6344B85CE6F7BBA46C60BF1C0DF3E443 /* Event+CoreDataProperties.swift in Sources */,
+				5351AEF4A6DDF34A46A91BD80E945324 /* PPBatchDataHandler.swift in Sources */,
+				01FE4F6B23134C0E4C409D67B527BB51 /* PPBatchDataStoreController.swift in Sources */,
+				3910118B72FBFAF41E47B2545A7A5A8B /* PPBatchManager.swift in Sources */,
+				4D1CAD67CE73F00B1B97D98F2D57FA0E /* PPBatchStrategies.swift in Sources */,
+				86E0FC14AB854697C6C7BF00F853B235 /* PPBatchUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,18 +327,44 @@
 		211BC710E6BF896E0DB0288AD01B2462 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Batching;
-			target = EA8DE917E1C2FD56322396A7169FC8F9 /* Batching */;
+			target = 8E95FA5F7BE666FE296E12F0C1BBAC59 /* Batching */;
 			targetProxy = 8C35D91FE11A291AB326B9E4EDFBB310 /* PBXContainerItemProxy */;
-		};
-		804C47402934159BE3BE93776052930A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Batching-Batching";
-			target = F733CC2EB84CC66172C21023C5A7055F /* Batching-Batching */;
-			targetProxy = 4F9E7FD8343EEADDD7562F0ECE225CEE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		01D3B1231C3F0310A2626BD3E1C54041 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2849C794C295C0666B71882D22E6903 /* Batching.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Batching/Batching-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Batching/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Batching/Batching.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Batching;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		156284431C64CB05C59BDA0595A1E95A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -443,41 +405,9 @@
 			};
 			name = Release;
 		};
-		400A41D4D3EE68CC7B3DFA0F1070B4AD /* Release */ = {
+		629A144AA6E763752DC60B0BA51A5DF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C0AFBFD79B95552487BC58DBA7EA62C /* Batching.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Batching/Batching-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Batching/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Batching/Batching.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Batching;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		87C48211F3D0B74B990CA7175AACF8AC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C0AFBFD79B95552487BC58DBA7EA62C /* Batching.xcconfig */;
+			baseConfigurationReference = E2849C794C295C0666B71882D22E6903 /* Batching.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -623,40 +553,6 @@
 			};
 			name = Debug;
 		};
-		D573FDC2B8F6BC17275D4F8233DEAE64 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C0AFBFD79B95552487BC58DBA7EA62C /* Batching.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Batching";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Batching/ResourceBundle-Batching-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = Batching;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		F19A8DFCE95A78AA2D98E49A4FFF073B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C0AFBFD79B95552487BC58DBA7EA62C /* Batching.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Batching";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Batching/ResourceBundle-Batching-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = Batching;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -678,20 +574,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC50854C03754C431354C6169C0B2CEC /* Build configuration list for PBXNativeTarget "Batching" */ = {
+		83E4D446AA60C474FDE3185F84E92F22 /* Build configuration list for PBXNativeTarget "Batching" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87C48211F3D0B74B990CA7175AACF8AC /* Debug */,
-				400A41D4D3EE68CC7B3DFA0F1070B4AD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DF70E402195F9A93CAC0EF62DE4BECE3 /* Build configuration list for PBXNativeTarget "Batching-Batching" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F19A8DFCE95A78AA2D98E49A4FFF073B /* Debug */,
-				D573FDC2B8F6BC17275D4F8233DEAE64 /* Release */,
+				629A144AA6E763752DC60B0BA51A5DF3 /* Debug */,
+				01D3B1231C3F0310A2626BD3E1C54041 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

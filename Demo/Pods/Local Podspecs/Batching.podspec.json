@@ -19,14 +19,15 @@
     "tag": "1.0.0"
   },
   "source_files": [
-    "Batching",
-    "Batching/**/*.{swift}"
+    "Batching/**/*.{swift,.xcdatamodeld}",
+    "Batching/Resources/BatchingDataModel.xcdatamodeld",
+    "Batching/Resources/BatchingDataModel.xcdatamodeld/*.xcdatamodel"
   ],
-  "resource_bundles": {
-    "Batching": [
-      "Batching/Resources/*"
-    ]
-  },
+  "resources": [
+    "Resources/BatchingDataModel.xcdatamodeld",
+    "Resources/BatchingDataModel.xcdatamodeld/*.xcdatamodel"
+  ],
+  "preserve_paths": "Resources/BatchingDataModel.xcdatamodeld",
   "frameworks": [
     "UIKit",
     "Foundation"
