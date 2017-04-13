@@ -20,7 +20,7 @@
   },
   "source_files": [
     "Batching",
-    "Batching/**/*.{swift}, Batching/**/*.{xcdatamodel}"
+    "Batching/**/*.{swift, xcdatamodeld, xcdatamodel}"
   ],
   "frameworks": [
     "UIKit",
