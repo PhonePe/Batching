@@ -69,6 +69,7 @@
 		107762401E24E4F1008D534D /* Batching */ = {
 			isa = PBXGroup;
 			children = (
+				10FE02141E9F5D82003F1ABE /* Resources */,
 				10FE01A91E9EF29D003F1ABE /* Core */,
 				10FE01A81E9EF254003F1ABE /* Persistence */,
 				10CFEFB41E2CB8BB009AFBCB /* Support Files */,
@@ -90,7 +91,6 @@
 			children = (
 				10FE01AF1E9EFAB1003F1ABE /* Event+CoreDataClass.swift */,
 				10FE01B01E9EFAB1003F1ABE /* Event+CoreDataProperties.swift */,
-				10FE01AB1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodeld */,
 				10FE01821E9E4010003F1ABE /* PPBatchDataStoreController.swift */,
 				10FE01B61E9EFE36003F1ABE /* PPBatchDataHandler.swift */,
 			);
@@ -105,6 +105,14 @@
 				108B83D41E28E07C00101E76 /* PPBatchUtils.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		10FE02141E9F5D82003F1ABE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10FE01AB1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodeld */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A8CF48298D196A148E03CE66 /* Pods */ = {
@@ -430,7 +438,8 @@
 				10FE01AC1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodel */,
 			);
 			currentVersion = 10FE01AC1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodel */;
-			path = BatchingDataModel.xcdatamodeld;
+			name = BatchingDataModel.xcdatamodeld;
+			path = ../Persistence/BatchingDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
