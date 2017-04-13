@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "Batching"
-    s.version      = "1.0.0"
+    s.version      = "1.1.0"
     s.summary      = "A batching library for the analytics events."
     s.homepage     = "https://github.com/arorajatin"
     s.license      = { :type => "MIT", :file => "LICENSE" }
