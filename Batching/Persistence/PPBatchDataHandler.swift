@@ -28,19 +28,23 @@ final class PPBatchDataHandler {
     
     func save(event: NSObject, id: String, timestamp: Double) {
         
-        guard let moc = dataStoreController.managedObjectContext else {
-            assert(false, "moc not initialized")
-            return
-        }
-        
-        moc.performAndWait {
+        dataStoreController.inContext { (moc) in
             
-            if let _ = Event.insertEventFor(data: event, id: id, timestamp: timestamp, in: moc) {
-                do {
-                    try moc.save()
-                } catch {
-                    assert(false, "Save to the DB failed with error = \(error)")
+            guard let moc = moc else {
+                assert(false, "moc not initialized")
+                return
+            }
+
+            moc.performAndWait {
+                
+                if let _ = Event.insertEventFor(data: event, id: id, timestamp: timestamp, in: moc) {
+                    do {
+                        try moc.save()
+                    } catch {
+                        assert(false, "Save to the DB failed with error = \(error)")
+                    }
                 }
+                
             }
             
         }
@@ -49,56 +53,61 @@ final class PPBatchDataHandler {
     
     func deleteEventsWith(ids: Set<String>) {
         
-        guard let moc = dataStoreController.managedObjectContext else {
-            assert(false, "moc not initialized")
-            return
-        }
+        dataStoreController.inContext { (moc) in
         
-        moc.performAndWait {
+            guard let moc = moc else {
+                assert(false, "moc not initialized")
+                return
+            }
             
-            
-            if #available(iOS 9, *) {
+            moc.performAndWait {
                 
-                let fetch = PPBatchDataHandler.fetchRequestForEventWith(ids: ids)
                 
-                let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetch)
-                batchDeleteRequest.resultType = NSBatchDeleteRequestResultType.resultTypeObjectIDs
-                
-                do {
-                    let result = try moc.execute(batchDeleteRequest) as? NSBatchDeleteResult
+                if #available(iOS 9, *) {
                     
-                    //Update the moc about the change
-                    if let objectIDArray = result?.result as? [NSManagedObjectID] {
-                        let changes = [NSDeletedObjectsKey : objectIDArray]
-                        NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [moc])
-                    }
+                    let fetch = PPBatchDataHandler.fetchRequestForEventWith(ids: ids)
                     
-                } catch {
-                    assert(false, "Failed to delete objects in batches with error : \(error)")
-                }
-                
-            } else {
-            
-                let request = PPBatchDataHandler.fetchRequestForEventWith(ids: ids)
-                
-                do {
+                    let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetch)
+                    batchDeleteRequest.resultType = NSBatchDeleteRequestResultType.resultTypeObjectIDs
                     
-                    if let events = try moc.fetch(request) as? [Event] {
+                    do {
+                        let result = try moc.execute(batchDeleteRequest) as? NSBatchDeleteResult
                         
-                        for event in events {
-                            moc.delete(event)
+                        //Update the moc about the change
+                        if let objectIDArray = result?.result as? [NSManagedObjectID] {
+                            let changes = [NSDeletedObjectsKey : objectIDArray]
+                            NSManagedObjectContext.mergeChanges(fromRemoteContextSave: changes, into: [moc])
                         }
                         
-                        try moc.save()
+                    } catch {
+                        assert(false, "Failed to delete objects in batches with error : \(error)")
                     }
                     
-                } catch {
-                    assert(false, "Failed to delete objects with error: \(error)")
+                } else {
+                    
+                    let request = PPBatchDataHandler.fetchRequestForEventWith(ids: ids)
+                    
+                    do {
+                        
+                        if let events = try moc.fetch(request) as? [Event] {
+                            
+                            for event in events {
+                                moc.delete(event)
+                            }
+                            
+                            try moc.save()
+                        }
+                        
+                    } catch {
+                        assert(false, "Failed to delete objects with error: \(error)")
+                    }
+                    
                 }
                 
             }
             
         }
+        
         
     }
     
@@ -107,65 +116,73 @@ final class PPBatchDataHandler {
         var eventDatas = [Any]()
         var ids = [String]()
         
-        guard let moc = dataStoreController.managedObjectContext else {
-            assert(false, "moc not initialized")
-            return PPEventDataFetchResult(datas: nil, ids: nil)
-        }
+        dataStoreController.inContext { (moc) in
         
-        moc.performAndWait {
+            guard let moc = moc else {
+                assert(false, "moc not initialized")
+                return
+            }
             
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
-            request.fetchLimit = count
-            
-            do {
+            moc.performAndWait {
                 
-                if let events = try moc.fetch(request) as? [Event] {
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+                request.fetchLimit = count
+                
+                do {
                     
-                    for event in events {
+                    if let events = try moc.fetch(request) as? [Event] {
                         
-                        if let unwrappedData = event.data {
-                            eventDatas.append(unwrappedData)
-                        }
-                        
-                        if let id = event.id {
-                            ids.append(id)
+                        for event in events {
+                            
+                            if let unwrappedData = event.data {
+                                eventDatas.append(unwrappedData)
+                            }
+                            
+                            if let id = event.id {
+                                ids.append(id)
+                            }
+                            
                         }
                         
                     }
                     
+                } catch {
+                    assert(false, "Failed to fetch events with error = \(error)")
                 }
                 
-            } catch {
-                assert(false, "Failed to fetch events with error = \(error)")
             }
             
         }
-        
         
         if eventDatas.count == 0 || ids.count == 0 {
             return PPEventDataFetchResult(datas: nil, ids: nil)
         }
         
         return PPEventDataFetchResult(datas: eventDatas, ids: ids)
+        
     }
     
     func countOfEvents() -> Int {
         
         var count = 0
         
-        guard let moc = dataStoreController.managedObjectContext else {
-            assert(false, "moc not initialized")
-            return count
-        }
+        dataStoreController.inContext { (moc) in
         
-        moc.performAndWait {
+            guard let moc = moc else {
+                assert(false, "moc not initialized")
+                return
+            }
             
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
-            
-            do {
-                count = try moc.count(for: request)
-            } catch {
-                assert(false, "Could not fetch count error: \(error)")
+            moc.performAndWait {
+                
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+                
+                do {
+                    count = try moc.count(for: request)
+                } catch {
+                    assert(false, "Could not fetch count error: \(error)")
+                }
+                
             }
             
         }
@@ -175,7 +192,7 @@ final class PPBatchDataHandler {
     
     static func fetchRequestForEventWith(ids: Set<String>) -> NSFetchRequest<NSFetchRequestResult> {
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
-        fetch.predicate = NSPredicate(format: "ids IN %@", ids)
+        fetch.predicate = NSPredicate(format: "id IN %@", ids)
         
         return fetch
     }
