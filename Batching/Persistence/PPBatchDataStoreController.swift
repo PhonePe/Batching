@@ -16,7 +16,7 @@ class PPBatchDataStoreController {
     private var managedObjectModel: NSManagedObjectModel
     private var queue: DispatchQueue
     
-    var managedObjectContext: NSManagedObjectContext? {
+    private var managedObjectContext: NSManagedObjectContext? {
         
         guard _managedObjectContext.persistentStoreCoordinator != nil, storeCoordinator.persistentStores.isEmpty == false else {
             return nil
@@ -82,7 +82,7 @@ class PPBatchDataStoreController {
     
     func inContext(callback: @escaping (NSManagedObjectContext?) -> Void) {
         
-        queue.async {
+        queue.sync {
             
             guard let context = self.managedObjectContext else {
                 callback(nil)
