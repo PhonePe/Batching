@@ -15,6 +15,7 @@
 		10FE01AE1E9EF4AB003F1ABE /* BatchingDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10FE01AB1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodeld */; };
 		10FE01B11E9EFAB1003F1ABE /* Event+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE01AF1E9EFAB1003F1ABE /* Event+CoreDataClass.swift */; };
 		10FE01B21E9EFAB1003F1ABE /* Event+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE01B01E9EFAB1003F1ABE /* Event+CoreDataProperties.swift */; };
+		10FE01B71E9EFE36003F1ABE /* PPBatchDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE01B61E9EFE36003F1ABE /* PPBatchDataHandler.swift */; };
 		7313B8C8D665603FFA4C2878 /* Pods_Batching.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967F3DAAED55CC988AE3617C /* Pods_Batching.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		10FE01AC1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BatchingDataModel.xcdatamodel; sourceTree = "<group>"; };
 		10FE01AF1E9EFAB1003F1ABE /* Event+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataClass.swift"; sourceTree = "<group>"; };
 		10FE01B01E9EFAB1003F1ABE /* Event+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		10FE01B61E9EFE36003F1ABE /* PPBatchDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPBatchDataHandler.swift; sourceTree = "<group>"; };
 		2147E156D6C34F3D296B496D /* Pods-Batching.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Batching.release.xcconfig"; path = "Pods/Target Support Files/Pods-Batching/Pods-Batching.release.xcconfig"; sourceTree = "<group>"; };
 		2638BC246F98F5B2BE7F8724 /* Pods-Batching.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Batching.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Batching/Pods-Batching.debug.xcconfig"; sourceTree = "<group>"; };
 		967F3DAAED55CC988AE3617C /* Pods_Batching.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Batching.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 				10FE01B01E9EFAB1003F1ABE /* Event+CoreDataProperties.swift */,
 				10FE01AB1E9EF4A5003F1ABE /* BatchingDataModel.xcdatamodeld */,
 				10FE01821E9E4010003F1ABE /* PPBatchDataStoreController.swift */,
+				10FE01B61E9EFE36003F1ABE /* PPBatchDataHandler.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				1077624C1E24E7D6008D534D /* PPBatchManager.swift in Sources */,
 				10FE01B21E9EFAB1003F1ABE /* Event+CoreDataProperties.swift in Sources */,
 				10FE01AE1E9EF4AB003F1ABE /* BatchingDataModel.xcdatamodeld in Sources */,
+				10FE01B71E9EFE36003F1ABE /* PPBatchDataHandler.swift in Sources */,
 				10FE01B11E9EFAB1003F1ABE /* Event+CoreDataClass.swift in Sources */,
 				1077624D1E24E7D6008D534D /* PPBatchStrategies.swift in Sources */,
 			);
