@@ -1,0 +1,6 @@
+framework module Batching {
+  umbrella header "Batching-umbrella.h"
+
+  export *
+  module * { export * }
+}

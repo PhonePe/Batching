@@ -1,0 +1,30 @@
+{
+  "name": "Batching",
+  "version": "1.0.0",
+  "summary": "A batching library for the analytics events.",
+  "homepage": "https://github.com/arorajatin",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Jatin": "jatinarora269@gmail.com"
+  },
+  "social_media_url": "https://twitter.com/jatinarora269",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source": {
+    "git": "git@gitlab.phonepe.com:iOS/Batching.git",
+    "tag": "1.0.0"
+  },
+  "source_files": [
+    "Batching",
+    "Batching/**/*.{swift}"
+  ],
+  "frameworks": [
+    "UIKit",
+    "Foundation"
+  ],
+  "requires_arc": true
+}

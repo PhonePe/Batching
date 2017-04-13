@@ -1,0 +1,16 @@
+PODS:
+  - Batching (1.0.0)
+
+DEPENDENCIES:
+  - Batching (from `../`)
+
+EXTERNAL SOURCES:
+  Batching:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Batching: 561dd91ca8244196dea4c8d29e750edacbfbbdac
+
+PODFILE CHECKSUM: d9eb8248a6937aac31854a692a020986b192927d
+
+COCOAPODS: 1.1.1
