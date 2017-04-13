@@ -12,4 +12,17 @@ import CoreData
 @objc(Event)
 public class Event: NSManagedObject {
 
+    static func insertEventFor(data: NSData, id: String, timestamp: Double, in moc: NSManagedObjectContext) -> Event? {
+        
+        guard let newEvent = NSEntityDescription.insertNewObject(forEntityName: "Event", into: moc) as? Event else {
+            return nil
+        }
+        
+        newEvent.data = data
+        newEvent.id = id
+        newEvent.timestamp = timestamp
+        
+        return newEvent
+    }
+    
 }
