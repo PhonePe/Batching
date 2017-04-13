@@ -24,7 +24,7 @@ public class PPBatchManager {
     fileprivate var database: YapDatabase!
     fileprivate var timer: Timer? = nil
     fileprivate let dbName: String
-    fileprivate let dataHandler: PPBatchDataHandler
+    fileprivate let dataHandler: PPBatchDataHandler?
     
     public weak var delegate: PPBatchManagerDelegate?
     
