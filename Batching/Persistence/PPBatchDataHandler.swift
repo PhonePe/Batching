@@ -35,9 +35,7 @@ final class PPBatchDataHandler {
         
         moc.performAndWait {
             
-            let data = NSKeyedArchiver.archivedData(withRootObject: event) as NSData
-            
-            if let _ = Event.insertEventFor(data: data, id: id, timestamp: timestamp, in: moc) {
+            if let _ = Event.insertEventFor(data: event, id: id, timestamp: timestamp, in: moc) {
                 do {
                     try moc.save()
                 } catch {
@@ -125,8 +123,8 @@ final class PPBatchDataHandler {
                     
                     for event in events {
                         
-                        if let unwrappedData = event.data, let finalData = NSKeyedUnarchiver.unarchiveObject(with: unwrappedData as Data) {
-                            eventDatas.append(finalData)
+                        if let unwrappedData = event.data {
+                            eventDatas.append(unwrappedData)
                         }
                         
                         if let id = event.id {
