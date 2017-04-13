@@ -10,9 +10,9 @@ import Foundation
 
 
 public struct PPSizeBatchingStrategy {
-    public var eventsBeforeIngestion: Int64
+    public var eventsBeforeIngestion: Int
     
-    public init(eventsBeforeIngestion: Int64 = 10) {
+    public init(eventsBeforeIngestion: Int = 10) {
         self.eventsBeforeIngestion = eventsBeforeIngestion
     }
 }

@@ -68,7 +68,7 @@ public class PPBatchManager {
 
             //Check the strategies and count of events here
             
-            if (forced || self.isBatchReady(eventCount: Int64(count))) && count > 0 {
+            if (forced || self.isBatchReady(eventCount: count)) && count > 0 {
                 self.ingestBatch(self.handleBatchingResponse)
             }
         
@@ -76,7 +76,7 @@ public class PPBatchManager {
         
     }
     
-    fileprivate func isBatchReady(eventCount: Int64) -> Bool {
+    fileprivate func isBatchReady(eventCount: Int) -> Bool {
     
         if eventCount >= self.sizeStrategy.eventsBeforeIngestion {
             return true
