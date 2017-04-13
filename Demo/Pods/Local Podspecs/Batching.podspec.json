@@ -24,7 +24,7 @@
   ],
   "resource_bundles": {
     "Batching": [
-      "Batching/Resources/**/*"
+      "Batching/Resources/*"
     ]
   },
   "frameworks": [
