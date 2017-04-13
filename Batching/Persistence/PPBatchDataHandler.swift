@@ -37,7 +37,7 @@ final class PPBatchDataHandler {
 
             moc.performAndWait {
                 
-                if let _ = Event.insertEventFor(data: event, id: id, timestamp: timestamp, in: moc) {
+                if let _ = PPBatchEvent.insertEventFor(data: event, id: id, timestamp: timestamp, in: moc) {
                     do {
                         try moc.save()
                     } catch {
@@ -89,7 +89,7 @@ final class PPBatchDataHandler {
                     
                     do {
                         
-                        if let events = try moc.fetch(request) as? [Event] {
+                        if let events = try moc.fetch(request) as? [PPBatchEvent] {
                             
                             for event in events {
                                 moc.delete(event)
@@ -125,12 +125,12 @@ final class PPBatchDataHandler {
             
             moc.performAndWait {
                 
-                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PPBatchEvent")
                 request.fetchLimit = count
                 
                 do {
                     
-                    if let events = try moc.fetch(request) as? [Event] {
+                    if let events = try moc.fetch(request) as? [PPBatchEvent] {
                         
                         for event in events {
                             
@@ -175,7 +175,7 @@ final class PPBatchDataHandler {
             
             moc.performAndWait {
                 
-                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PPBatchEvent")
                 
                 do {
                     count = try moc.count(for: request)
@@ -191,7 +191,7 @@ final class PPBatchDataHandler {
     }
     
     static func fetchRequestForEventWith(ids: Set<String>) -> NSFetchRequest<NSFetchRequestResult> {
-        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Event")
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "PPBatchEvent")
         fetch.predicate = NSPredicate(format: "id IN %@", ids)
         
         return fetch

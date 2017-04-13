@@ -1,5 +1,5 @@
 //
-//  Event+CoreDataProperties.swift
+//  PPBatchEvent+CoreDataProperties.swift
 //  Batching
 //
 //  Created by Jatin Arora on 13/04/17.
@@ -10,10 +10,10 @@ import Foundation
 import CoreData
 
 
-extension Event {
+extension PPBatchEvent {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Event> {
-        return NSFetchRequest<Event>(entityName: "Event")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<PPBatchEvent> {
+        return NSFetchRequest<PPBatchEvent>(entityName: "PPBatchEvent")
     }
 
     @NSManaged public var data: NSObject?
