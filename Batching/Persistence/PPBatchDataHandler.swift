@@ -101,11 +101,11 @@ final class PPBatchDataHandler {
     
     func fetchEventDatas(count: Int) -> [Any]? {
         
-        var events: [Event]? = nil
+        var eventDatas = [Any]()
         
         guard let moc = dataStoreController.managedObjectContext else {
             assert(false, "moc not initialized")
-            return events
+            return eventDatas
         }
         
         moc.performAndWait {
@@ -114,28 +114,29 @@ final class PPBatchDataHandler {
             request.fetchLimit = count
             
             do {
-                events = try moc.fetch(request) as? [Event]
+                
+                if let events = try moc.fetch(request) as? [Event] {
+                    
+                    for event in events {
+                        
+                        if let unwrappedData = event.data, let finalData = NSKeyedUnarchiver.unarchiveObject(with: unwrappedData as Data) {
+                            eventDatas.append(finalData)
+                        }
+                        
+                    }
+                    
+                }
+                
             } catch {
                 assert(false, "Failed to fetch events with error = \(error)")
             }
-        }
-        
-        if let events = events {
-        
-            var eventDatas = [Any]()
-            for event in events {
-                
-                if let unwrappedData = event.data, let finalData = NSKeyedUnarchiver.unarchiveObject(with: unwrappedData as Data) {
-                    eventDatas.append(finalData)
-                }
-                
-            }
             
-            return eventDatas
         }
         
         
-        return nil
+        
+        
+        return eventDatas
     }
     
     static func fetchRequestForEventWith(ids: Set<String>) -> NSFetchRequest<NSFetchRequestResult> {
