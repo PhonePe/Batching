@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         timeStrategy.timeBeforeIngestion = 1000
         
         batchManager = PPBatchManager(sizeStrategy: PPSizeBatchingStrategy(), timeStrategy: timeStrategy, dbName: "Batching")
+        batchManager.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -48,3 +49,11 @@ class ViewController: UIViewController {
 
 }
 
+
+extension ViewController: PPBatchManagerDelegate {
+
+    func batchManagerShouldIngestBatch(_ manager: PPBatchManager, batch: [Any], completion: @escaping (Bool, Error?) -> Void) {
+        completion(true, nil)
+    }
+    
+}
