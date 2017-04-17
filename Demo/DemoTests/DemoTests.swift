@@ -7,7 +7,9 @@
 //
 
 import XCTest
-import Batching
+import CoreData
+@testable import Batching
+@testable import Demo
 
 class DemoTests: XCTestCase {
     
@@ -21,11 +23,24 @@ class DemoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testModelCreation() {
+    func testSavingEvent() {
         
         let moc = CoreDataTestsHelper.setupInMemoryManagedObjectContext()
         
-        print("moc created")
+        let testEvent = TestEvent(name: "Test 1")
+        PPBatchDataHandler.save(event: testEvent, id: UUID().uuidString, timestamp: Date().timeIntervalSince1970, moc: moc)
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "PPBatchEvent")
+        var count = 0
+        
+        do {
+            count = try moc.count(for: fetchRequest)
+        } catch {
+            XCTAssert(false, "Failed to fetch count from DB")
+        }
+        
+        
+        XCTAssert(count == 1, "Event not inserted in the DB")
     }
     
     func testPerformanceExample() {
