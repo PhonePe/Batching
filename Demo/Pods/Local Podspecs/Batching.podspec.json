@@ -1,6 +1,6 @@
 {
   "name": "Batching",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "summary": "A batching library for the analytics events.",
   "homepage": "https://github.com/arorajatin",
   "license": {
@@ -16,7 +16,7 @@
   },
   "source": {
     "git": "git@gitlab.phonepe.com:iOS/Batching.git",
-    "tag": "1.1.0"
+    "tag": "1.1.1"
   },
   "source_files": [
     "Batching",

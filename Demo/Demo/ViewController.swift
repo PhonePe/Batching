@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //Setup Batching library
-        var timeStrategy = PPTimeBatchingStrategy()
+        let timeStrategy = PPTimeBatchingStrategy()
         
         batchManager = PPBatchManager(sizeStrategy: PPSizeBatchingStrategy(), timeStrategy: timeStrategy, dbName: "Batching")
         batchManager.delegate = self

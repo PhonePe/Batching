@@ -8,3 +8,10 @@ target 'Demo' do
   # Pods for Demo
   pod 'Batching', :path => '../'
 end
+
+target 'DemoTests' do
+ use_frameworks!
+ 
+ # Pods for Demo
+  pod 'Batching', :path => '../'
+end
