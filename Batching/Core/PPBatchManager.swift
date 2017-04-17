@@ -22,8 +22,8 @@ public class PPBatchManager {
     fileprivate var isUploadingEvents = false
     fileprivate var timer: Timer? = nil
     fileprivate let dbName: String
-    fileprivate let dataHandler: PPBatchDataHandler?
-    
+    private let dataStoreController: PPBatchDataStoreController?
+
     public weak var delegate: PPBatchManagerDelegate?
     
     public var debugEnabled = false
@@ -33,7 +33,7 @@ public class PPBatchManager {
         self.timeStrategy = timeStrategy
         self.dbName = dbName
         
-        self.dataHandler = PPBatchDataHandler(dbName: dbName)
+        dataStoreController = PPBatchDataStoreController(dbName: dbName)
         
         scheduleTimer()
         
@@ -53,7 +53,10 @@ public class PPBatchManager {
             //2. Store in the DB
             
             let eventID = UUID().uuidString
-            self.dataHandler?.save(event: event, id: eventID, timestamp: timestamp)
+            self.dataStoreController?.inContext(callback: { (moc) in
+                PPBatchDataHandler.save(event: event, id: eventID, timestamp: timestamp, moc: moc)
+            })
+            
             self.flush(false)
             
         }
@@ -64,7 +67,11 @@ public class PPBatchManager {
         
         batchingQueue.async {
         
-            let count = self.dataHandler?.countOfEvents() ?? 0
+            var count = 0
+            
+            self.dataStoreController?.inContext(callback: { (moc) in
+                count = PPBatchDataHandler.countOfEvents(moc: moc)
+            })
 
             //Check the strategies and count of events here
             
@@ -95,8 +102,12 @@ public class PPBatchManager {
         self.isUploadingEvents = true
         
         //1. Get events from DB
+        var result: PPEventDataFetchResult?
         
-        let result = self.dataHandler?.fetchEventDatas(count: Int(self.sizeStrategy.eventsBeforeIngestion))
+        self.dataStoreController?.inContext(callback: { (moc) in
+            result = PPBatchDataHandler.fetchEventDatas(count: Int(self.sizeStrategy.eventsBeforeIngestion), moc: moc)
+        })
+        
         
         if let eventDatas = result?.datas, let ids = result?.ids {
             self.sendBatchWith(eventDatas, forKeys: ids, completion: completion)
@@ -147,9 +158,11 @@ public class PPBatchManager {
         
         batchingQueue.async {
         
-            //Remove all objects for corresponding keys from YapDB
-            self.dataHandler?.deleteEventsWith(ids: Set(ids))
-            completion()
+            self.dataStoreController?.inContext(callback: { (moc) in
+                //Remove all objects for corresponding keys from YapDB
+                PPBatchDataHandler.deleteEventsWith(ids: Set(ids), moc: moc)
+                completion()
+            })
             
         }
         
