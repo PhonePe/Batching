@@ -16,15 +16,6 @@ struct PPEventDataFetchResult {
 
 final class PPBatchDataHandler {
     
-    private let dataStoreController: PPBatchDataStoreController
-    
-    init?(dbName: String) {
-        guard let storeController = PPBatchDataStoreController(dbName: dbName) else {
-            return nil
-        }
-        
-        dataStoreController = storeController
-    }
     
     static func save(event: NSObject, id: String, timestamp: Double, moc: NSManagedObjectContext?) {
         
