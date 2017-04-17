@@ -21,9 +21,11 @@ class DemoTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testModelCreation() {
         
+        let moc = CoreDataTestsHelper.setupInMemoryManagedObjectContext()
         
+        print("moc created")
     }
     
     func testPerformanceExample() {
