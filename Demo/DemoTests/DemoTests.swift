@@ -23,6 +23,28 @@ class DemoTests: XCTestCase {
         super.tearDown()
     }
     
+    func testEventCreationInMoc() {
+        
+        let moc = CoreDataTestsHelper.setupInMemoryManagedObjectContext()
+        
+        let eventName = "Test Event 1"
+        let eventId = UUID().uuidString
+        let ts = Date().timeIntervalSince1970
+        let testEvent = TestEvent(name: eventName)
+        
+        let _ = PPBatchEvent.insertEventFor(data: testEvent, id: eventId, timestamp: ts, in: moc)
+        
+        XCTAssert(moc.insertedObjects.count == 1, "Object not inserted in moc")
+        
+        for object in moc.insertedObjects {
+            if let event = object as? PPBatchEvent {
+                XCTAssert(eventId == event.id, "id mismatch in the event inserted")
+                XCTAssert(ts == event.timestamp, "timestamp mismatch in the event inserted")
+            }
+        }
+        
+    }
+    
     func testSavingEvent() {
         
         let moc = CoreDataTestsHelper.setupInMemoryManagedObjectContext()
