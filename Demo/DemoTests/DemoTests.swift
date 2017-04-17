@@ -81,11 +81,21 @@ class DemoTests: XCTestCase {
         
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testFetchingOfEvents() {
+    
+        let moc = CoreDataTestsHelper.setupInMemoryManagedObjectContext()
+        
+        let testEvent = TestEvent(name: "Test 1")
+        let id = UUID().uuidString
+        PPBatchDataHandler.save(event: testEvent, id: id, timestamp: Date().timeIntervalSince1970, moc: moc)
+        
+        let events = PPBatchDataHandler.fetchEventDatas(count: 1, moc: moc)
+        
+        XCTAssert(events.ids?.count == 1, "Event count wrong when fetching events")
+        
+        let fetchedId = events.ids?[0]
+        
+        XCTAssert(fetchedId == id, "Wrong event fetched")
     }
     
 }
