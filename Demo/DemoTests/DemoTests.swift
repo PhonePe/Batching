@@ -65,6 +65,22 @@ class DemoTests: XCTestCase {
         XCTAssert(count == 1, "Event not inserted in the DB")
     }
     
+    func testCountOfEvents() {
+    
+        let moc = CoreDataTestsHelper.setupInMemoryManagedObjectContext()
+        let totalObjects = 10
+        
+        for i in 0..<totalObjects {
+            let testEvent = TestEvent(name: "Test \(i)")
+            PPBatchDataHandler.save(event: testEvent, id: UUID().uuidString, timestamp: Date().timeIntervalSince1970, moc: moc)
+        }
+        
+        let count = PPBatchDataHandler.countOfEvents(moc: moc)
+        
+        XCTAssert(count == totalObjects, "Count not correct from DB")
+        
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
