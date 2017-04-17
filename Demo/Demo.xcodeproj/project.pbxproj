@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10AB1CE21EA4E4A90028B49E /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AB1CE11EA4E4A90028B49E /* DemoTests.swift */; };
 		10FE02011E9F5528003F1ABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE02001E9F5528003F1ABE /* AppDelegate.swift */; };
 		10FE02031E9F5528003F1ABE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FE02021E9F5528003F1ABE /* ViewController.swift */; };
 		10FE02061E9F5528003F1ABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10FE02041E9F5528003F1ABE /* Main.storyboard */; };
@@ -16,7 +17,20 @@
 		ADB3AE714180ADD6895885FB /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B2098699D1E68C11A3C4683 /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		10AB1CE41EA4E4A90028B49E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10FE01F51E9F5528003F1ABE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10FE01FC1E9F5528003F1ABE;
+			remoteInfo = Demo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		10AB1CDF1EA4E4A90028B49E /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		10AB1CE11EA4E4A90028B49E /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
+		10AB1CE31EA4E4A90028B49E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10FE01FD1E9F5528003F1ABE /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10FE02001E9F5528003F1ABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10FE02021E9F5528003F1ABE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		10AB1CDC1EA4E4A90028B49E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		10FE01FA1E9F5528003F1ABE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,10 +63,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10AB1CE01EA4E4A90028B49E /* DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				10AB1CE11EA4E4A90028B49E /* DemoTests.swift */,
+				10AB1CE31EA4E4A90028B49E /* Info.plist */,
+			);
+			path = DemoTests;
+			sourceTree = "<group>";
+		};
 		10FE01F41E9F5528003F1ABE = {
 			isa = PBXGroup;
 			children = (
 				10FE01FF1E9F5528003F1ABE /* Demo */,
+				10AB1CE01EA4E4A90028B49E /* DemoTests */,
 				10FE01FE1E9F5528003F1ABE /* Products */,
 				19F9D796D89C32648166AF0A /* Pods */,
 				74051CB45D4CD96884A4B202 /* Frameworks */,
@@ -56,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				10FE01FD1E9F5528003F1ABE /* Demo.app */,
+				10AB1CDF1EA4E4A90028B49E /* DemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +126,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		10AB1CDE1EA4E4A90028B49E /* DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10AB1CE81EA4E4A90028B49E /* Build configuration list for PBXNativeTarget "DemoTests" */;
+			buildPhases = (
+				10AB1CDB1EA4E4A90028B49E /* Sources */,
+				10AB1CDC1EA4E4A90028B49E /* Frameworks */,
+				10AB1CDD1EA4E4A90028B49E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10AB1CE51EA4E4A90028B49E /* PBXTargetDependency */,
+			);
+			name = DemoTests;
+			productName = DemoTests;
+			productReference = 10AB1CDF1EA4E4A90028B49E /* DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		10FE01FC1E9F5528003F1ABE /* Demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10FE020F1E9F5528003F1ABE /* Build configuration list for PBXNativeTarget "Demo" */;
@@ -124,6 +174,12 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Jatin Arora";
 				TargetAttributes = {
+					10AB1CDE1EA4E4A90028B49E = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 9GW78CXC2W;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 10FE01FC1E9F5528003F1ABE;
+					};
 					10FE01FC1E9F5528003F1ABE = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 9GW78CXC2W;
@@ -145,11 +201,19 @@
 			projectRoot = "";
 			targets = (
 				10FE01FC1E9F5528003F1ABE /* Demo */,
+				10AB1CDE1EA4E4A90028B49E /* DemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		10AB1CDD1EA4E4A90028B49E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		10FE01FB1E9F5528003F1ABE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +275,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		10AB1CDB1EA4E4A90028B49E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10AB1CE21EA4E4A90028B49E /* DemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		10FE01F91E9F5528003F1ABE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -222,6 +294,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10AB1CE51EA4E4A90028B49E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10FE01FC1E9F5528003F1ABE /* Demo */;
+			targetProxy = 10AB1CE41EA4E4A90028B49E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		10FE02041E9F5528003F1ABE /* Main.storyboard */ = {
@@ -243,6 +323,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		10AB1CE61EA4E4A90028B49E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9GW78CXC2W;
+				INFOPLIST_FILE = DemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jatinarora.DemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
+			};
+			name = Debug;
+		};
+		10AB1CE71EA4E4A90028B49E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 9GW78CXC2W;
+				INFOPLIST_FILE = DemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jatinarora.DemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
+			};
+			name = Release;
+		};
 		10FE020D1E9F5528003F1ABE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -369,6 +477,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		10AB1CE81EA4E4A90028B49E /* Build configuration list for PBXNativeTarget "DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10AB1CE61EA4E4A90028B49E /* Debug */,
+				10AB1CE71EA4E4A90028B49E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		10FE01F81E9F5528003F1ABE /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
