@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
     s.author             = { "Jatin" => "jatinarora269@gmail.com" }
     s.social_media_url   = "https://twitter.com/jatinarora269"
     s.platform     = :ios, "8.0"
-    s.source       = { :git => "git@gitlab.phonepe.com:iOS/Batching.git", :tag => "#{s.version}" }
+    s.source       = { :git => "git@github.com:PhonePe/Batching.git", :tag => "#{s.version}" }
     s.source_files  = "Batching", "Batching/**/*.{swift}"
     s.resource_bundles = {'Batching' => ['Batching/Resources/**/*.{xcdatamodeld,xcdatamodel}']}
     s.frameworks = "UIKit", "Foundation"
