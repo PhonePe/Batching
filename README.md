@@ -8,8 +8,9 @@ A iOS batching library for analytics events.
 
 Add the following line to your Podfile:
 
+```ruby
 pod 'Batching'
-
+```
 
 ## Usage
 
